@@ -10,21 +10,21 @@ const NeuralNetwork = dynamic(() => import('./NeuralNetwork'), {
 
 function LoadingState() {
   return (
-    <div className="absolute inset-0 flex items-center justify-center bg-slate-950">
-      <div className="w-16 h-16 border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin"></div>
+    <div className="absolute inset-0 flex items-center justify-center bg-transparent z-0">
+      <div className="w-16 h-16 border-4 border-blue-600/20 border-t-blue-600 rounded-full animate-spin"></div>
     </div>
   );
 }
 
 function FallbackState() {
   return (
-    <div className="absolute inset-0 bg-slate-950 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black"></div>
+    <div className="absolute inset-0 bg-white overflow-hidden z-0">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-slate-50 to-slate-100"></div>
       <div className="absolute inset-0 opacity-20">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute rounded-full bg-cyan-500 blur-sm"
+            className="absolute rounded-full bg-blue-500 blur-sm"
             style={{
               width: Math.random() * 4 + 2 + 'px',
               height: Math.random() * 4 + 2 + 'px',

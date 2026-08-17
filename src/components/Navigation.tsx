@@ -81,19 +81,19 @@ export default function Navigation() {
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled 
-          ? "bg-slate-900/80 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,212,255,0.05)]" 
+          ? "bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-[0_4px_30px_rgba(0,212,255,0.05)]" 
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2 z-50">
-          <div className="w-10 h-10 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center group-hover:border-gold-500/50 transition-colors">
-            <span className="text-lg font-bold bg-gradient-to-br from-gold-500 to-gold-400 bg-clip-text text-transparent">
+          <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center group-hover:border-blue-500/50 transition-colors">
+            <span className="text-lg font-bold bg-gradient-to-br from-blue-600 to-blue-500 bg-clip-text text-transparent">
               AS
             </span>
           </div>
-          <span className="text-white font-semibold hidden sm:block tracking-wide group-hover:text-gold-400 transition-colors">
+          <span className="text-slate-900 font-semibold hidden sm:block tracking-wide group-hover:text-blue-600 transition-colors">
             Abhishek Shukla
           </span>
         </Link>
@@ -107,8 +107,8 @@ export default function Navigation() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-sm font-medium transition-colors hover:text-cyan-400 ${
-                  isActive ? "text-cyan-400" : "text-gray-300"
+                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                  isActive ? "text-blue-600" : "text-slate-600"
                 }`}
               >
                 {link.label}
@@ -123,7 +123,7 @@ export default function Navigation() {
             href={siteConfig.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-slate-900 rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+            className="group relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)]"
           >
             <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
             Resume
@@ -132,7 +132,7 @@ export default function Navigation() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-gray-300 hover:text-white z-50 relative"
+          className="md:hidden p-2 text-slate-600 hover:text-slate-900 z-50 relative"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -148,7 +148,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-20 bg-slate-900/95 backdrop-blur-3xl z-40 md:hidden flex flex-col p-6 border-t border-white/5"
+            className="fixed inset-0 top-20 bg-white/95 backdrop-blur-3xl z-40 md:hidden flex flex-col p-6 border-t border-slate-200"
           >
             <div className="flex flex-col gap-6 mt-8">
               {siteConfig.navLinks.map((link) => {
@@ -159,7 +159,7 @@ export default function Navigation() {
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
                     className={`text-2xl font-bold tracking-tight ${
-                      isActive ? "text-cyan-400" : "text-white"
+                      isActive ? "text-blue-600" : "text-slate-900"
                     }`}
                   >
                     {link.label}
@@ -171,7 +171,7 @@ export default function Navigation() {
                 href={siteConfig.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-gold-500 to-gold-400 text-slate-900 rounded-xl font-bold text-lg"
+                className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-bold text-lg"
               >
                 <Download className="w-5 h-5" />
                 Download Resume

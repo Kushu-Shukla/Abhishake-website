@@ -9,9 +9,9 @@ const NODE_COUNT = 80;
 const CONNECTION_DISTANCE = 1.2;
 
 const colorPalette = [
-  new THREE.Color('#D4AF37'), // Gold
-  new THREE.Color('#00D4FF'), // Cyan
-  new THREE.Color('#FFFFFF'), // White
+  new THREE.Color('#1e3a8a'), // Blue 900
+  new THREE.Color('#3b82f6'), // Blue 500
+  new THREE.Color('#93c5fd'), // Blue 300
 ];
 
 function Network() {
@@ -126,7 +126,7 @@ function Network() {
             args={[connections, 3]}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#ffffff" transparent opacity={0.15} />
+        <lineBasicMaterial color="#1e40af" transparent opacity={0.2} />
       </lineSegments>
     </group>
   );

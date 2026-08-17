@@ -13,7 +13,8 @@ export const siteConfig = {
     linkedin: 'https://linkedin.com/in/abhishek-shukla-cx',
     twitter: 'https://twitter.com/abhishekshukla',
     instagram: 'https://www.instagram.com/abhishek.cxo/',
-    youtube: 'https://youtube.com/@abhishekshukla',
+    youtube: 'https://www.youtube.com/@CXAILeader',
+    thinkers360: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader',
     freelancer: 'https://www.freelancer.com/u/abhishekshukla',
     jobbers: 'https://www.jobbers.com/abhishekshukla',
   },
@@ -121,11 +122,23 @@ export const siteConfig = {
     subtitle: 'Ready to optimize your business operations or accelerate your career track? Reach out directly to schedule your primary consultation strategy session today.',
     cta: 'Get In Touch',
   },
+  books: {
+    title: 'Publications',
+    items: [
+      {
+        title: 'The Bridge You Become: Becoming the Leader Others Remember',
+        description: 'A transformative guide on leadership, blending deep human insights with actionable operational strategies. Discover how to build bridges between your potential and your team\'s success.',
+        link: 'https://a.co/d/07fJjZRe',
+        image: '/book-cover.png',
+      }
+    ]
+  },
   navLinks: [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#work' },
     { label: 'Process', href: '#process' },
     { label: 'Expertise', href: '#expertise' },
+    { label: 'Books', href: '#books' },
     { label: 'Contact', href: '#contact' },
   ],
 } as const;

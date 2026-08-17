@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Hero, About, Work, Process, Expertise, Resume, Contact } from "@/components/sections";
+import { Hero, About, Work, Process, Expertise, Resume, Books, Contact } from "@/components/sections";
 
 export default function Home() {
   return (
@@ -13,6 +13,7 @@ export default function Home() {
         <Process />
         <Expertise />
         <Resume />
+        <Books />
         <Contact />
       </main>
       <Footer />

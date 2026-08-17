@@ -50,25 +50,25 @@ function WorkCard({ item, index }: { item: typeof siteConfig.work.items[number];
           transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
           transition: 'transform 0.1s ease-out, border-color 0.3s ease-in-out',
         }}
-        className="group relative glass rounded-2xl p-8 h-full flex flex-col hover:border-gold-500/30 overflow-hidden transform-gpu"
+        className="group relative glass rounded-2xl p-8 h-full flex flex-col hover:border-blue-500/30 overflow-hidden transform-gpu"
       >
         <div className="flex justify-between items-start mb-6">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold-500/20 to-cyan-500/20 flex items-center justify-center p-0.5 group-hover:scale-110 transition-transform duration-500">
-            <div className="w-full h-full bg-slate-900/80 rounded-full flex items-center justify-center backdrop-blur-sm">
-              <Icon className="w-6 h-6 text-gold-500" />
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600/20 to-cyan-500/20 flex items-center justify-center p-0.5 group-hover:scale-110 transition-transform duration-500">
+            <div className="w-full h-full bg-white/80 rounded-full flex items-center justify-center backdrop-blur-sm">
+              <Icon className="w-6 h-6 text-blue-600" />
             </div>
           </div>
-          <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-cyan-400 transition-colors duration-300" />
+          <ArrowUpRight className="w-6 h-6 text-slate-300 group-hover:text-blue-600 transition-colors duration-300" />
         </div>
 
         <div className="mt-auto">
-          <p className="text-cyan-400 text-xs uppercase tracking-wider mb-2 font-medium">
+          <p className="text-blue-600 text-xs uppercase tracking-wider mb-2 font-medium">
             {item.category || 'Project'}
           </p>
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-400 transition-colors duration-300">
+          <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
             {item.title}
           </h3>
-          <p className="text-white/60 mb-6 text-sm leading-relaxed">
+          <p className="text-slate-600 mb-6 text-sm leading-relaxed">
             {item.description}
           </p>
           
@@ -77,7 +77,7 @@ function WorkCard({ item, index }: { item: typeof siteConfig.work.items[number];
               {item.tags.map((tag: string, i: number) => (
                 <span 
                   key={i}
-                  className="bg-white/5 text-white/50 px-3 py-1 text-xs rounded-full border border-white/5 group-hover:border-white/10 transition-colors"
+                  className="bg-white/5 text-slate-500 px-3 py-1 text-xs rounded-full border border-slate-200 group-hover:border-slate-200 transition-colors"
                 >
                   {tag}
                 </span>
@@ -94,15 +94,15 @@ export function Work() {
   const items = siteConfig.work?.items || [];
   
   return (
-    <section id="work" className="py-24 md:py-32 bg-slate-800/30 relative z-10">
+    <section id="work" className="py-24 md:py-32 bg-slate-50/30 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-24">
           <FadeIn direction="up">
-            <p className="text-cyan-400 text-sm tracking-widest uppercase mb-4 font-semibold">SELECTED WORK</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-gold mb-6">
+            <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">SELECTED WORK</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-blue mb-6">
               Selected Work
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto text-lg">
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
               {siteConfig.work?.subtitle || "Showcasing some of my recent projects and collaborations."}
             </p>
           </FadeIn>
