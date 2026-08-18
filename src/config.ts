@@ -8,11 +8,11 @@ export const siteConfig = {
   location: 'Delhi, India (Available Globally)',
   domain: 'abhishekshukla.com',
   resumeUrl: '/Abhishek_Shukla_Service_Catalog_Updated.pdf',
-  profileImage: '/profile_image.jpeg',
+  profileImage: '/profile_main.png',
   social: {
     linkedin: 'https://linkedin.com/in/abhishek-shukla-cx',
-    twitter: 'https://twitter.com/abhishekshukla',
-    instagram: 'https://www.instagram.com/abhishek.cxo/',
+    twitter: 'https://twitter.com/CXAILeader',
+    instagram: 'https://www.instagram.com/CXAILeader/',
     youtube: 'https://www.youtube.com/@CXAILeader',
     thinkers360: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader',
     freelancer: 'https://www.freelancer.com/u/abhishekshukla',
@@ -29,7 +29,7 @@ export const siteConfig = {
   about: {
     title: 'About Me',
     paragraphs: [
-      'With 6+ years of specialized experience optimizing performance infrastructure across high-demand sectors like travel, aviation, and digital marketplaces, I translate operational complexity into pure margin protection.',
+      'With 6+ years of specialized experience optimizing performance infrastructure across high-demand sectors like travel, aviation, and digital marketplaces (including Air India, IndiGo, Flipkart Travel, Clear Trip, and Freelancer.com), I translate operational complexity into pure margin protection.',
       'As an operational partner managing cross-functional programs on platforms like Freelancer.com, I actively guide multi-client voice and non-voice operations. My implementations consistently sustain a Service Level above 95.5% using predictive real-time monitoring, keep First Call Resolution > 85%, and lower Average Handling Time by 15% through strict workflows and root cause analysis.',
       'I specialize in integrating modern Generative AI frameworks into legacy corporate architectures. By automating manual reporting flows, systemizing AI-enabled ticketing networks, and leveraging Microsoft 365 Copilot, I help organizations unlock a 10X boost in team productivity.',
     ],

@@ -4,6 +4,7 @@ import { siteConfig } from "@/config";
 import { LinkedinIcon, TwitterXIcon, InstagramIcon, YoutubeIcon, Thinkers360Icon } from "@/components/icons/SocialIcons";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -27,13 +28,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 items-start mb-16">
           {/* Brand/About */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2 w-fit">
-              <div className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center">
-                <span className="text-sm font-bold bg-gradient-to-br from-blue-600 to-blue-500 bg-clip-text text-transparent">
-                  AS
-                </span>
+            <Link href="/" className="flex items-center gap-3 w-fit group">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 group-hover:border-blue-500 transition-colors">
+                <Image src={siteConfig.profileImage} alt="Abhishek Shukla" fill className="object-cover" />
               </div>
-              <span className="text-white font-bold text-xl tracking-wide">
+              <span className="text-slate-900 font-bold text-xl tracking-wide">
                 Abhishek Shukla
               </span>
             </Link>

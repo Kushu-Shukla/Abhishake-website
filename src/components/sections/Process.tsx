@@ -3,21 +3,49 @@
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
 
+import Image from 'next/image';
+
 export function Process() {
   const steps = siteConfig.process?.steps || [];
 
   return (
     <section id="process" className="py-24 md:py-32 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20 md:mb-32">
-          <FadeIn direction="up">
-            <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">MY PROCESS</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-blue mb-6">
-              How I Work
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              {siteConfig.process?.subtitle || "My structured approach to solving problems and delivering high-quality solutions."}
-            </p>
+        
+        {/* Header Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-20 md:mb-32">
+          {/* Text Column */}
+          <FadeIn direction="right">
+            <div className="text-left">
+              <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">MY PROCESS</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient-blue mb-6">
+                How I Work
+              </h2>
+              <p className="text-slate-600 text-lg">
+                {siteConfig.process?.subtitle || "My structured approach to solving problems and delivering high-quality solutions."}
+              </p>
+            </div>
+          </FadeIn>
+          
+          {/* Profile Image Column */}
+          <div className="relative flex justify-center">
+            <FadeIn direction="up">
+               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl shadow-blue-900/20 border-8 border-white group">
+                 <Image src="/profile_book.png" alt="Abhishek Shukla with book" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+               </div>
+            </FadeIn>
+          </div>
+
+          {/* Badges Column (Right) */}
+          <FadeIn direction="left">
+            <div className="flex flex-row md:flex-col justify-center items-center gap-6">
+              <div className="relative w-40 h-40 bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-xl border border-slate-200/50 hover:scale-105 transition-transform duration-300">
+                <Image src="/badge1.png" alt="Thinkers360 Top Thought Leaders" fill className="object-contain p-3" />
+              </div>
+              <div className="relative w-28 h-40 bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-xl border border-slate-200/50 hover:scale-105 transition-transform duration-300">
+                <Image src="/badge2.png" alt="Thinkers360 Certified Expert" fill className="object-contain p-3" />
+              </div>
+            </div>
           </FadeIn>
         </div>
 

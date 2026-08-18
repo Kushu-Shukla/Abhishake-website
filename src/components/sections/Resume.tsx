@@ -3,11 +3,20 @@
 import { Download, Briefcase, Globe, MapPin, Languages } from 'lucide-react';
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
+import Image from 'next/image';
 
 export function Resume() {
   return (
     <section id="resume" className="py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+        
+        {/* Banner Image */}
+        <FadeIn className="w-full mb-16">
+          <div className="relative w-full max-w-5xl mx-auto aspect-[21/9] md:aspect-[3/1] rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+            <Image src="/profile_banner.png" alt="Abhishek Shukla CX & AI Leader" fill className="object-cover" />
+          </div>
+        </FadeIn>
+
         <FadeIn>
           <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
             RESUME
@@ -49,8 +58,8 @@ export function Resume() {
                 <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-blue-600 mb-2">
                   <Globe className="w-6 h-6" />
                 </div>
-                <h4 className="text-slate-900 font-medium">Industries</h4>
-                <p className="text-slate-500 text-sm">Tech & Media</p>
+                <h4 className="text-slate-900 font-medium">Domain</h4>
+                <p className="text-slate-500 text-sm">CX Leader</p>
               </div>
               
               <div className="flex flex-col items-center justify-center gap-3">
