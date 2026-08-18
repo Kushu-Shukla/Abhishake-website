@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useRef, MouseEvent } from 'react';
+import { useState, useRef, MouseEvent, FormEvent } from 'react';
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
-import { BookOpen, Award, Cpu, Users, ArrowUpRight, LucideIcon } from 'lucide-react';
+import { BookOpen, Award, Cpu, Users, ArrowUpRight, LucideIcon, X } from 'lucide-react';
 import Image from 'next/image';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -13,7 +13,7 @@ const iconMap: Record<string, LucideIcon> = {
   Users,
 };
 
-function WorkCard({ item, index }: { item: typeof siteConfig.work.items[number]; index: number }) {
+function WorkCard({ item, index, onClick }: { item: typeof siteConfig.work.items[number]; index: number; onClick: () => void }) {
   const iconName = item.icon as string;
   const Icon = iconMap[iconName] || BookOpen;
   
@@ -45,13 +45,14 @@ function WorkCard({ item, index }: { item: typeof siteConfig.work.items[number];
     <FadeIn delay={index * 0.1} direction="up" className="h-full">
       <div
         ref={cardRef}
+        onClick={onClick}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
           transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
           transition: 'transform 0.1s ease-out, border-color 0.3s ease-in-out',
         }}
-        className="group relative glass rounded-2xl p-8 h-full flex flex-col hover:border-blue-500/30 overflow-hidden transform-gpu"
+        className="cursor-pointer group relative glass rounded-2xl p-8 h-full flex flex-col hover:border-blue-500/30 overflow-hidden transform-gpu"
       >
         <div className="flex justify-between items-start mb-6">
           <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600/20 to-cyan-500/20 flex items-center justify-center p-0.5 group-hover:scale-110 transition-transform duration-500">
@@ -93,6 +94,21 @@ function WorkCard({ item, index }: { item: typeof siteConfig.work.items[number];
 
 export function Work() {
   const items = siteConfig.work?.items || [];
+  const [selectedService, setSelectedService] = useState<any>(null);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    const subject = encodeURIComponent(`Inquiry: ${selectedService.title}`);
+    const body = encodeURIComponent(`Hi Abhishek,\n\nI am interested in your service: ${selectedService.title}.\n\nMessage:\n${message}\n\nFrom: ${name} (${email})`);
+    
+    window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
+    setSelectedService(null);
+  };
   
   return (
     <section id="work" className="py-24 md:py-32 bg-slate-50/30 relative z-10">
@@ -117,10 +133,71 @@ export function Work() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {items.map((item: any, index: number) => (
-            <WorkCard key={index} item={item} index={index} />
+            <WorkCard key={index} item={item} index={index} onClick={() => setSelectedService(item)} />
           ))}
         </div>
       </div>
+
+      {/* Service Request Modal */}
+      {selectedService && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
+          <div 
+            className="absolute inset-0"
+            onClick={() => setSelectedService(null)}
+          ></div>
+          <div className="bg-white rounded-3xl w-full max-w-lg p-8 relative z-10 shadow-2xl border border-slate-200 animate-in fade-in zoom-in duration-300">
+            <button 
+              onClick={() => setSelectedService(null)}
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">Request Service</h3>
+            <p className="text-slate-600 mb-6 font-medium text-blue-600">{selectedService.title}</p>
+            
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 bg-slate-50"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 bg-slate-50"
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                <textarea 
+                  name="message" 
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 bg-slate-50 resize-none"
+                  placeholder="Tell me about your project..."
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit"
+                className="mt-2 w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-4 rounded-xl hover:scale-[1.02] transition-transform shadow-lg shadow-blue-500/25"
+              >
+                Send Request
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

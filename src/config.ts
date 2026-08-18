@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Abhishek Shukla',
-  title: 'Operations & Customer Experience Consultant',
+  title: 'CX & AI Project Leader | Author',
   tagline: 'Driving Operational Excellence, 10X GenAI Productivity, and Strategic Career Growth',
   bio: 'With 6+ years of specialized experience optimizing performance infrastructure across high-demand sectors like travel, aviation, and digital marketplaces, I translate operational complexity into pure margin protection.',
   email: 'abhishekshukla16102000@gmail.com',
@@ -21,7 +21,7 @@ export const siteConfig = {
   hero: {
     greeting: 'Hello, I\'m',
     name: 'Abhishek Shukla',
-    subtitle: 'Operations & Customer Experience Consultant',
+    subtitle: 'CX & AI Project Leader | Author',
     description: 'Driving Operational Excellence, 10X GenAI Productivity, and Strategic Career Growth.',
     cta1: { text: 'View My Services', href: '#work' },
     cta2: { text: 'Let\'s Connect', href: '#contact' },
