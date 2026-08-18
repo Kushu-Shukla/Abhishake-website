@@ -48,7 +48,7 @@ export function SlideUpItem({ children, className = '' }: { children: ReactNode;
       scale: 1,
       transition: {
         duration: 0.8,
-        type: "spring",
+        type: "spring" as const,
         bounce: 0.4
       },
     },
