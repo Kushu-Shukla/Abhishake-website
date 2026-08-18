@@ -5,27 +5,27 @@ import { Plane, ShoppingBag, Bot, ArrowRight, BarChart3, TrendingUp, Users } fro
 
 const caseStudies = [
   {
-    company: 'Aviation Sector (Air India & IndiGo)',
+    company: 'Jobbers',
     role: 'Operations & CX Optimization',
-    icon: Plane,
-    problem: 'Siloed customer support channels were increasing average handle time (AHT) and passenger grievance rates during peak travel seasons.',
-    solution: 'Designed and deployed unified AI-driven ticketing workflows and omnichannel support strategies, centralizing passenger context for agents.',
+    icon: Users,
+    problem: 'Siloed user support and fragmented onboarding workflows were increasing drop-off rates and slowing down user acquisition.',
+    solution: 'Designed and deployed unified AI-driven matching workflows and omnichannel support strategies, centralizing the user context.',
     results: [
-      { label: 'AHT Reduction', value: '35%', icon: TrendingUp },
-      { label: 'CSAT Score', value: '+24%', icon: Users },
-      { label: 'Cost Savings', value: '$1.2M', icon: BarChart3 }
+      { label: 'Onboarding Speed', value: '+35%', icon: TrendingUp },
+      { label: 'User Retention', value: '+24%', icon: Users },
+      { label: 'Cost Savings', value: '3x', icon: BarChart3 }
     ]
   },
   {
-    company: 'Travel Tech & E-Commerce (Flipkart Travel & Cleartrip)',
+    company: 'Freelancer.com',
     role: 'AI-Driven Scalability Leader',
-    icon: ShoppingBag,
-    problem: 'High cart-abandonment rates and fragmented user journeys across flight and hotel booking funnels were impacting conversion.',
-    solution: 'Implemented predictive AI models to map user drop-offs and redesigned the booking UX to reduce friction points using Lean Six Sigma.',
+    icon: Bot,
+    problem: 'High dispute resolution times and fragmented project mapping flows were impacting client-freelancer trust and conversion.',
+    solution: 'Implemented predictive AI models to map user drop-offs and redesigned the dispute resolution UX to reduce friction points.',
     results: [
       { label: 'Conversion Lift', value: '28%', icon: TrendingUp },
-      { label: 'User Retention', value: '+40%', icon: Users },
-      { label: 'Process Efficiency', value: '3x', icon: BarChart3 }
+      { label: 'Resolution Speed', value: '+40%', icon: Users },
+      { label: 'Process Efficiency', value: '2x', icon: BarChart3 }
     ]
   }
 ];
