@@ -41,13 +41,15 @@ export function SlideUp({
 
 export function SlideUpItem({ children, className = '' }: { children: ReactNode; className?: string }) {
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+        duration: 0.8,
+        type: "spring",
+        bounce: 0.4
       },
     },
   };

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CustomCursor from '@/components/CustomCursor';
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-900">
+        <CustomCursor />
         {children}
       </body>
     </html>

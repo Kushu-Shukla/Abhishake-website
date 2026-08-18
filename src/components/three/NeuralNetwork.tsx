@@ -5,13 +5,14 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-const NODE_COUNT = 80;
-const CONNECTION_DISTANCE = 1.2;
+const NODE_COUNT = 150;
+const CONNECTION_DISTANCE = 1.5;
 
 const colorPalette = [
-  new THREE.Color('#1e3a8a'), // Blue 900
-  new THREE.Color('#3b82f6'), // Blue 500
-  new THREE.Color('#93c5fd'), // Blue 300
+  new THREE.Color('#ec4899'), // Pink
+  new THREE.Color('#8b5cf6'), // Purple
+  new THREE.Color('#06b6d4'), // Cyan
+  new THREE.Color('#3b82f6'), // Blue
 ];
 
 function Network() {
@@ -20,16 +21,17 @@ function Network() {
   const groupRef = useRef<THREE.Group>(null);
   const { mouse } = useThree();
 
-  const { positions, colors, sizes, connections } = useMemo(() => {
+  const { positions, colors, sizes, connections, nodeVectors, originalPositions } = useMemo(() => {
     const pos = new Float32Array(NODE_COUNT * 3);
     const col = new Float32Array(NODE_COUNT * 3);
     const siz = new Float32Array(NODE_COUNT);
     const nodeVectors: THREE.Vector3[] = [];
+    const originalPositions: THREE.Vector3[] = [];
 
     // Generate nodes
     for (let i = 0; i < NODE_COUNT; i++) {
-      // Random position in a sphere radius ~3
-      const radius = 3 * Math.cbrt(Math.random());
+      // Random position in a larger sphere radius
+      const radius = 4 * Math.cbrt(Math.random());
       const theta = Math.random() * 2 * Math.PI;
       const phi = Math.acos(2 * Math.random() - 1);
 
@@ -42,6 +44,7 @@ function Network() {
       pos[i * 3 + 2] = z;
 
       nodeVectors.push(new THREE.Vector3(x, y, z));
+      originalPositions.push(new THREE.Vector3(x, y, z));
 
       // Colors
       const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
@@ -49,64 +52,93 @@ function Network() {
       col[i * 3 + 1] = color.g;
       col[i * 3 + 2] = color.b;
 
-      // Sizes (0.02 to 0.08)
-      siz[i] = 0.02 + Math.random() * 0.06;
+      // Sizes (larger)
+      siz[i] = 0.03 + Math.random() * 0.08;
     }
 
-    // Generate connections
-    const conn: number[] = [];
-    for (let i = 0; i < NODE_COUNT; i++) {
-      for (let j = i + 1; j < NODE_COUNT; j++) {
-        if (nodeVectors[i].distanceTo(nodeVectors[j]) < CONNECTION_DISTANCE) {
-          conn.push(
-            nodeVectors[i].x, nodeVectors[i].y, nodeVectors[i].z,
-            nodeVectors[j].x, nodeVectors[j].y, nodeVectors[j].z
-          );
-        }
-      }
-    }
-
+    // Connections are generated dynamically in useFrame for interactivity
     return {
       positions: pos,
       colors: col,
       sizes: siz,
-      connections: new Float32Array(conn),
-      nodeVectors
+      connections: new Float32Array(NODE_COUNT * NODE_COUNT * 6), // Max possible connections
+      nodeVectors,
+      originalPositions
     };
   }, []);
 
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
   useFrame((state) => {
-    if (meshRef.current) {
+    if (meshRef.current && linesRef.current) {
+      const time = state.clock.elapsedTime;
+      const mouseX = (mouse.x * state.viewport.width) / 2;
+      const mouseY = (mouse.y * state.viewport.height) / 2;
+      const mousePos = new THREE.Vector3(mouseX, mouseY, 0);
+
+      // Repel and update positions
+      let connectionIndex = 0;
+      
       for (let i = 0; i < NODE_COUNT; i++) {
-        const x = positions[i * 3];
-        const y = positions[i * 3 + 1];
-        const z = positions[i * 3 + 2];
+        const orig = originalPositions[i];
+        const vec = nodeVectors[i];
         
-        // Gentle floating
-        const t = state.clock.elapsedTime;
-        const offsetY = Math.sin(t + i) * 0.1;
+        // Float effect
+        const floatOffsetY = Math.sin(time * 0.5 + i) * 0.2;
+        const floatOffsetX = Math.cos(time * 0.5 + i) * 0.2;
         
-        dummy.position.set(x, y + offsetY, z);
-        dummy.scale.setScalar(sizes[i]);
+        // Target position
+        let targetX = orig.x + floatOffsetX;
+        let targetY = orig.y + floatOffsetY;
+        const targetZ = orig.z;
+        
+        // Mouse repel effect
+        // Project node to screen space roughly
+        const nodeScreenPos = vec.clone();
+        const dist = nodeScreenPos.distanceTo(mousePos);
+        
+        if (dist < 2.5) {
+          const force = (2.5 - dist) * 0.5;
+          const dir = nodeScreenPos.clone().sub(mousePos).normalize();
+          targetX += dir.x * force;
+          targetY += dir.y * force;
+        }
+        
+        // Spring back
+        vec.x += (targetX - vec.x) * 0.05;
+        vec.y += (targetY - vec.y) * 0.05;
+        vec.z += (targetZ - vec.z) * 0.05;
+        
+        dummy.position.copy(vec);
+        // Pulse size
+        dummy.scale.setScalar(sizes[i] * (1 + Math.sin(time * 2 + i) * 0.2));
         dummy.updateMatrix();
         meshRef.current.setMatrixAt(i, dummy.matrix);
       }
       meshRef.current.instanceMatrix.needsUpdate = true;
+      
+      // Update lines based on new positions
+      for (let i = 0; i < NODE_COUNT; i++) {
+        for (let j = i + 1; j < NODE_COUNT; j++) {
+          if (nodeVectors[i].distanceTo(nodeVectors[j]) < CONNECTION_DISTANCE) {
+            connections[connectionIndex++] = nodeVectors[i].x;
+            connections[connectionIndex++] = nodeVectors[i].y;
+            connections[connectionIndex++] = nodeVectors[i].z;
+            connections[connectionIndex++] = nodeVectors[j].x;
+            connections[connectionIndex++] = nodeVectors[j].y;
+            connections[connectionIndex++] = nodeVectors[j].z;
+          }
+        }
+      }
+      
+      const geom = linesRef.current.geometry as THREE.BufferGeometry;
+      geom.setDrawRange(0, connectionIndex / 3);
+      geom.attributes.position.needsUpdate = true;
     }
 
     if (groupRef.current) {
-      // Slow rotation
       groupRef.current.rotation.y += 0.001;
       groupRef.current.rotation.x += 0.0005;
-
-      // Subtle mouse follow
-      const targetX = mouse.x * 0.2;
-      const targetY = mouse.y * 0.2;
-      
-      groupRef.current.position.x += (targetX - groupRef.current.position.x) * 0.05;
-      groupRef.current.position.y += (targetY - groupRef.current.position.y) * 0.05;
     }
   });
 
@@ -124,9 +156,10 @@ function Network() {
           <bufferAttribute
             attach="attributes-position"
             args={[connections, 3]}
+            usage={THREE.DynamicDrawUsage}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#1e40af" transparent opacity={0.2} />
+        <lineBasicMaterial color="#8b5cf6" transparent opacity={0.25} />
       </lineSegments>
     </group>
   );
@@ -137,13 +170,13 @@ export default function NeuralNetwork() {
     <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
-        dpr={[1, 1.5]}
+        dpr={[1, 2]}
         gl={{ antialias: true, alpha: true }}
         style={{ position: 'absolute', inset: 0 }}
       >
         <ambientLight intensity={0.5} />
         <Network />
-        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} autoRotate autoRotateSpeed={0.5} />
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       </Canvas>
     </div>
   );

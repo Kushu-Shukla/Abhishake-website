@@ -21,19 +21,19 @@ export function FadeIn({
   className = '',
 }: FadeInProps) {
   const getVariants = () => {
-    const distance = 40;
+    const distance = 80;
     switch (direction) {
       case 'up':
-        return { hidden: { opacity: 0, y: distance }, visible: { opacity: 1, y: 0 } };
+        return { hidden: { opacity: 0, y: distance, scale: 0.9 }, visible: { opacity: 1, y: 0, scale: 1 } };
       case 'down':
-        return { hidden: { opacity: 0, y: -distance }, visible: { opacity: 1, y: 0 } };
+        return { hidden: { opacity: 0, y: -distance, scale: 0.9 }, visible: { opacity: 1, y: 0, scale: 1 } };
       case 'left':
-        return { hidden: { opacity: 0, x: distance }, visible: { opacity: 1, x: 0 } };
+        return { hidden: { opacity: 0, x: distance, scale: 0.9 }, visible: { opacity: 1, x: 0, scale: 1 } };
       case 'right':
-        return { hidden: { opacity: 0, x: -distance }, visible: { opacity: 1, x: 0 } };
+        return { hidden: { opacity: 0, x: -distance, scale: 0.9 }, visible: { opacity: 1, x: 0, scale: 1 } };
       case 'none':
       default:
-        return { hidden: { opacity: 0 }, visible: { opacity: 1 } };
+        return { hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1 } };
     }
   };
 
@@ -42,8 +42,8 @@ export function FadeIn({
       variants={getVariants()}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, delay, type: "spring", bounce: 0.4 }}
       className={className}
     >
       {children}
