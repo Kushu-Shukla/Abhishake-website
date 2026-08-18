@@ -6,3 +6,4 @@ export { Expertise } from './Expertise';
 export { Resume } from './Resume';
 export { Contact } from './Contact';
 export { default as Books } from './Books';
+export { LogoMarquee } from './LogoMarquee';

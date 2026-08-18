@@ -22,12 +22,7 @@ export function Contact() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
         <FadeIn>
-          {/* 3D Round Movable Image */}
-          <div className="mb-8 group perspective">
-            <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden shadow-2xl shadow-blue-500/30 border-4 border-white animate-float hover:scale-110 hover:rotate-[5deg] transition-all duration-500 cursor-grab active:cursor-grabbing">
-              <Image src="/profile_bw.png" alt="Abhishek Shukla Contact" fill className="object-cover" />
-            </div>
-          </div>
+
           <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
             GET IN TOUCH
           </span>
