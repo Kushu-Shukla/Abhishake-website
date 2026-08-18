@@ -26,7 +26,7 @@ export function Expertise() {
           
           <FadeIn direction="left" className="flex justify-center lg:justify-end perspective">
             <div className="relative w-56 h-56 rounded-full overflow-hidden shadow-2xl shadow-purple-500/30 border-4 border-white animate-float hover:scale-110 hover:-rotate-[5deg] transition-all duration-500 cursor-grab active:cursor-grabbing">
-              <Image src="/profile_white.png" alt="Abhishek Shukla Expertise" fill className="object-cover" />
+              <Image src="/expertise_profile.jpg" alt="Abhishek Shukla Expertise" fill className="object-cover" />
             </div>
           </FadeIn>
         </div>
