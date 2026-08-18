@@ -10,12 +10,21 @@ export function Resume() {
     <section id="resume" className="py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
         
-        {/* Banner Image */}
-        <FadeIn className="w-full mb-16">
-          <div className="relative w-full max-w-5xl mx-auto aspect-[21/9] md:aspect-[3/1] rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
-            <Image src="/profile_banner.png" alt="Abhishek Shukla CX & AI Leader" fill className="object-cover" />
-          </div>
-        </FadeIn>
+        {/* Collage Images replacing Banner */}
+        <div className="w-full max-w-6xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <FadeIn direction="right">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+              <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay pointer-events-none"></div>
+              <Image src="/collage_1.jpg" alt="Abhishek Shukla Portfolio" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+          </FadeIn>
+          <FadeIn direction="left">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+              <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay pointer-events-none"></div>
+              <Image src="/collage_2.png" alt="Abhishek Shukla Portfolio" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+          </FadeIn>
+        </div>
 
         <FadeIn>
           <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
