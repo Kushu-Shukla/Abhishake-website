@@ -6,7 +6,7 @@ import { Plane, ShoppingBag, Bot, ArrowRight, BarChart3, TrendingUp, Users } fro
 const caseStudies = [
   {
     company: 'Jobbers',
-    role: 'Operations & CX Optimization',
+    role: 'CX & AI Leader',
     icon: Users,
     problem: 'Siloed user support and fragmented onboarding workflows were increasing drop-off rates and slowing down user acquisition.',
     solution: 'Designed and deployed unified AI-driven matching workflows and omnichannel support strategies, centralizing the user context.',
@@ -18,7 +18,7 @@ const caseStudies = [
   },
   {
     company: 'Freelancer.com',
-    role: 'AI-Driven Scalability Leader',
+    role: 'CX & AI Leader',
     icon: Bot,
     problem: 'High dispute resolution times and fragmented project mapping flows were impacting client-freelancer trust and conversion.',
     solution: 'Implemented predictive AI models to map user drop-offs and redesigned the dispute resolution UX to reduce friction points.',
