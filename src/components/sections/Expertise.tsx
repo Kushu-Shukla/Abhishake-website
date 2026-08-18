@@ -4,24 +4,33 @@ import { motion } from 'framer-motion';
 import { BadgeCheck, Award } from 'lucide-react';
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
+import Image from 'next/image';
 
 export function Expertise() {
   return (
     <section id="expertise" className="py-24 md:py-32 bg-slate-50/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <FadeIn>
-          <div className="mb-16">
-            <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
-              EXPERTISE & CERTIFICATIONS
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue">
-              {siteConfig.expertise.title || 'Skills & Certifications'}
-            </h2>
-            <p className="text-slate-600 text-lg max-w-2xl">
-              {siteConfig.expertise.subtitle || 'A comprehensive overview of my technical skills, tools, and professional certifications.'}
-            </p>
-          </div>
-        </FadeIn>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <FadeIn>
+            <div>
+              <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
+                EXPERTISE & CERTIFICATIONS
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue">
+                {siteConfig.expertise.title || 'Skills & Certifications'}
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl">
+                {siteConfig.expertise.subtitle || 'A comprehensive overview of my technical skills, tools, and professional certifications.'}
+              </p>
+            </div>
+          </FadeIn>
+          
+          <FadeIn direction="left" className="flex justify-center lg:justify-end perspective">
+            <div className="relative w-56 h-56 rounded-full overflow-hidden shadow-2xl shadow-purple-500/30 border-4 border-white animate-float hover:scale-110 hover:-rotate-[5deg] transition-all duration-500 cursor-grab active:cursor-grabbing">
+              <Image src="/profile_white.png" alt="Abhishek Shukla Expertise" fill className="object-cover" />
+            </div>
+          </FadeIn>
+        </div>
 
         <div className="mb-20">
           <h3 className="text-2xl font-semibold text-slate-900 mb-8">Technical Skills</h3>

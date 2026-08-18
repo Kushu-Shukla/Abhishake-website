@@ -11,7 +11,7 @@ export const siteConfig = {
   profileImage: '/profile_main.png',
   social: {
     linkedin: 'https://linkedin.com/in/abhishek-shukla-cx',
-    twitter: 'https://twitter.com/CXAILeader',
+    twitter: 'https://x.com/Abhishek1610200',
     instagram: 'https://www.instagram.com/CXAILeader/',
     youtube: 'https://www.youtube.com/@CXAILeader',
     thinkers360: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader',

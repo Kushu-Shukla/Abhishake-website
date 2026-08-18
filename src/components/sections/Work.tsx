@@ -4,6 +4,7 @@ import { useState, useRef, MouseEvent } from 'react';
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
 import { BookOpen, Award, Cpu, Users, ArrowUpRight, LucideIcon } from 'lucide-react';
+import Image from 'next/image';
 
 const iconMap: Record<string, LucideIcon> = {
   BookOpen,
@@ -96,15 +97,21 @@ export function Work() {
   return (
     <section id="work" className="py-24 md:py-32 bg-slate-50/30 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 md:mb-24">
-          <FadeIn direction="up">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 gap-12">
+          <FadeIn direction="right" className="md:w-2/3 text-left">
             <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">SELECTED WORK</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-blue mb-6">
               Selected Work
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+            <p className="text-slate-600 max-w-2xl text-lg">
               {siteConfig.work?.subtitle || "Showcasing some of my recent projects and collaborations."}
             </p>
+          </FadeIn>
+          
+          <FadeIn direction="left" className="md:w-1/3 flex justify-center perspective">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-2xl shadow-pink-500/30 border-4 border-white animate-float hover:scale-110 hover:rotate-[8deg] transition-all duration-500 cursor-grab active:cursor-grabbing">
+              <Image src="/profile_grey.png" alt="Abhishek Shukla Work" fill className="object-cover" />
+            </div>
           </FadeIn>
         </div>
 
