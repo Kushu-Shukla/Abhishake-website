@@ -61,7 +61,7 @@ export default function About() {
           <div className="relative">
             <FadeIn delay={0.4} direction="left">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-slate-200">
-                <Image src="/about_profile.jpg" alt="Abhishek Shukla Author" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src={siteConfig.profileImage} alt="Abhishek Shukla Author" fill className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </FadeIn>
           </div>

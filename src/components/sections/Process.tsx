@@ -31,7 +31,7 @@ export function Process() {
           <div className="relative flex justify-center">
             <FadeIn direction="up">
                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl shadow-blue-900/20 border-8 border-white group">
-                 <Image src="/profile_book.png" alt="Abhishek Shukla with book" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                 <Image src="/process_profile.jpg" alt="Abhishek Shukla Process" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                </div>
             </FadeIn>
           </div>
