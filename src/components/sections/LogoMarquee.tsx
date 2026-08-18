@@ -1,39 +1,31 @@
 'use client';
 
-import Image from 'next/image';
-
-const row1 = [
-  { name: 'Google Drive', url: 'https://cdn.simpleicons.org/googledrive' },
-  { name: 'Adobe', url: 'https://cdn.simpleicons.org/adobecreativecloud' },
-  { name: 'Jira', url: 'https://cdn.simpleicons.org/jira' },
-  { name: 'Gmail', url: 'https://cdn.simpleicons.org/gmail' },
-  { name: 'Figma', url: 'https://cdn.simpleicons.org/figma' },
-  { name: 'Outlook', url: 'https://cdn.simpleicons.org/microsoftoutlook' },
-  { name: 'Slack', url: 'https://cdn.simpleicons.org/slack' },
-  { name: 'Zendesk', url: 'https://cdn.simpleicons.org/zendesk' },
+const companiesRow1 = [
+  'Air India',
+  'IndiGo',
+  'Flipkart Travel',
+  'Clear Trip',
+  'Freelancer.com'
 ];
 
-const row2 = [
-  { name: 'Salesforce', url: 'https://cdn.simpleicons.org/salesforce' },
-  { name: 'Intercom', url: 'https://cdn.simpleicons.org/intercom' },
-  { name: 'HubSpot', url: 'https://cdn.simpleicons.org/hubspot' },
-  { name: 'Google Calendar', url: 'https://cdn.simpleicons.org/googlecalendar' },
-  { name: 'Asana', url: 'https://cdn.simpleicons.org/asana' },
-  { name: 'Zoom', url: 'https://cdn.simpleicons.org/zoom' },
-  { name: 'Notion', url: 'https://cdn.simpleicons.org/notion' },
-  { name: 'Stripe', url: 'https://cdn.simpleicons.org/stripe' },
+const companiesRow2 = [
+  'Freelancer.com',
+  'Clear Trip',
+  'Flipkart Travel',
+  'IndiGo',
+  'Air India'
 ];
 
 // Duplicate for infinite scroll
-const marqueeRow1 = [...row1, ...row1, ...row1];
-const marqueeRow2 = [...row2, ...row2, ...row2];
+const marqueeRow1 = [...companiesRow1, ...companiesRow1, ...companiesRow1, ...companiesRow1];
+const marqueeRow2 = [...companiesRow2, ...companiesRow2, ...companiesRow2, ...companiesRow2];
 
-function LogoBox({ company }: { company: { name: string, url: string } }) {
+function CompanyBox({ name }: { name: string }) {
   return (
-    <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex items-center justify-center p-3 md:p-4 mx-3 md:mx-4 shrink-0 transition-transform duration-300 hover:scale-110 cursor-pointer">
-      <div className="relative w-full h-full">
-        <Image src={company.url} alt={company.name} fill className="object-contain" unoptimized />
-      </div>
+    <div className="h-16 md:h-20 bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex items-center justify-center px-8 md:px-12 mx-3 md:mx-4 shrink-0 transition-transform duration-300 hover:scale-105 cursor-default">
+      <span className="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity">
+        {name}
+      </span>
     </div>
   );
 }
@@ -47,7 +39,7 @@ export function LogoMarquee() {
       
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest">
-          CONNECTS WITH YOUR FAVORITE TOOLS
+          TRUSTED BY INDUSTRY LEADERS
         </p>
       </div>
 
@@ -55,16 +47,14 @@ export function LogoMarquee() {
         {/* Row 1 - Scrolling Left */}
         <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
           {marqueeRow1.map((company, index) => (
-            <LogoBox key={`r1-${index}`} company={company} />
+            <CompanyBox key={`r1-${index}`} name={company} />
           ))}
         </div>
 
-        {/* Row 2 - Scrolling Right (we use a negative animation direction in tailwind or just a reverse animation) */}
-        {/* We can use the same marquee but starting shifted and with direction-reverse if configured in Tailwind.
-            Since standard animate-marquee is linear forwards, we'll just use a style hack or add animate-marquee-reverse */}
+        {/* Row 2 - Scrolling Right */}
         <div className="flex w-max animate-marquee hover:[animation-play-state:paused]" style={{ animationDirection: 'reverse' }}>
           {marqueeRow2.map((company, index) => (
-            <LogoBox key={`r2-${index}`} company={company} />
+            <CompanyBox key={`r2-${index}`} name={company} />
           ))}
         </div>
       </div>
