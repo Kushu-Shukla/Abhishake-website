@@ -3,7 +3,7 @@
 import { FadeIn } from '@/components/animations';
 import SceneLoader from '@/components/three/SceneLoader';
 import { siteConfig } from '@/config';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Trophy } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -36,9 +36,16 @@ export default function Hero() {
             </FadeIn>
             
             <FadeIn delay={0.6} direction="up">
-              <h2 className="text-xl md:text-2xl text-slate-700 font-medium mb-6">
+              <h2 className="text-xl md:text-2xl text-slate-700 font-medium mb-4">
                 {siteConfig.title || 'Customer Experience & AI-Driven Operations Leader'}
               </h2>
+            </FadeIn>
+            
+            <FadeIn delay={0.7} direction="up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full glass border border-blue-200/50 text-blue-700 text-sm md:text-base font-semibold shadow-sm">
+                <Trophy className="w-4 h-4 text-blue-500" />
+                #1 Rank in India on Customer Loyalty & AI Ethics via Thinkers360
+              </div>
             </FadeIn>
             
             <FadeIn delay={0.8} direction="up">
