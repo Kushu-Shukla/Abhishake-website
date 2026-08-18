@@ -1,31 +1,43 @@
 'use client';
 
 const companiesRow1 = [
-  'Air India',
-  'IndiGo',
-  'Flipkart Travel',
-  'Clear Trip',
-  'Freelancer.com'
+  { name: 'Air India', url: 'https://logo.clearbit.com/airindia.com' },
+  { name: 'IndiGo', url: 'https://logo.clearbit.com/goindigo.in' },
+  { name: 'Flipkart Travel', url: 'https://logo.clearbit.com/flipkart.com' },
+  { name: 'Clear Trip', url: 'https://logo.clearbit.com/cleartrip.com' },
+  { name: 'Freelancer', url: 'https://logo.clearbit.com/freelancer.com' }
 ];
 
 const companiesRow2 = [
-  'Freelancer.com',
-  'Clear Trip',
-  'Flipkart Travel',
-  'IndiGo',
-  'Air India'
+  { name: 'Freelancer', url: 'https://logo.clearbit.com/freelancer.com' },
+  { name: 'Clear Trip', url: 'https://logo.clearbit.com/cleartrip.com' },
+  { name: 'Flipkart Travel', url: 'https://logo.clearbit.com/flipkart.com' },
+  { name: 'IndiGo', url: 'https://logo.clearbit.com/goindigo.in' },
+  { name: 'Air India', url: 'https://logo.clearbit.com/airindia.com' }
 ];
 
 // Duplicate for infinite scroll
 const marqueeRow1 = [...companiesRow1, ...companiesRow1, ...companiesRow1, ...companiesRow1];
 const marqueeRow2 = [...companiesRow2, ...companiesRow2, ...companiesRow2, ...companiesRow2];
 
-function CompanyBox({ name }: { name: string }) {
+function CompanyBox({ company }: { company: { name: string, url: string } }) {
   return (
-    <div className="h-16 md:h-20 bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex items-center justify-center px-8 md:px-12 mx-3 md:mx-4 shrink-0 transition-transform duration-300 hover:scale-105 cursor-default">
-      <span className="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity">
-        {name}
-      </span>
+    <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex items-center justify-center p-3 md:p-4 mx-3 md:mx-4 shrink-0 transition-transform duration-300 hover:scale-110 cursor-pointer">
+      <div className="relative w-full h-full flex items-center justify-center">
+        {/* Using standard img tag to bypass Next.js external image hostname restrictions */}
+        <img 
+          src={company.url} 
+          alt={company.name} 
+          className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+          onError={(e) => {
+             // Fallback if logo fails to load
+             e.currentTarget.style.display = 'none';
+             if (e.currentTarget.parentElement) {
+               e.currentTarget.parentElement.innerHTML = `<span class="text-xs font-bold text-slate-400">${company.name}</span>`;
+             }
+          }}
+        />
+      </div>
     </div>
   );
 }
@@ -47,14 +59,14 @@ export function LogoMarquee() {
         {/* Row 1 - Scrolling Left */}
         <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
           {marqueeRow1.map((company, index) => (
-            <CompanyBox key={`r1-${index}`} name={company} />
+            <CompanyBox key={`r1-${index}`} company={company} />
           ))}
         </div>
 
         {/* Row 2 - Scrolling Right */}
         <div className="flex w-max animate-marquee hover:[animation-play-state:paused]" style={{ animationDirection: 'reverse' }}>
           {marqueeRow2.map((company, index) => (
-            <CompanyBox key={`r2-${index}`} name={company} />
+            <CompanyBox key={`r2-${index}`} company={company} />
           ))}
         </div>
       </div>
