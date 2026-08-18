@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BadgeCheck, Award } from 'lucide-react';
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
 import Image from 'next/image';
@@ -65,14 +64,25 @@ export function Expertise() {
         <FadeIn delay={0.4}>
           <div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-8">Certifications</h3>
-            <div className="flex flex-wrap gap-4">
-              {siteConfig.expertise.certifications.map((cert: string, index: number) => (
+            
+            {/* Featured Image Certificates */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              {siteConfig.expertise.certifications
+                .filter((cert: any) => cert.image)
+                .map((cert: any, index: number) => (
                 <div 
-                  key={index}
-                  className="glass px-6 py-3 rounded-full border border-gold-500/20 flex items-center gap-3 hover:border-blue-500/50 hover:bg-blue-600/5 transition-all duration-300 group"
+                  key={`img-${index}`}
+                  className="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white aspect-[4/3]"
                 >
-                  <BadgeCheck className="w-5 h-5 text-blue-600 group-hover:text-blue-600 transition-colors" />
-                  <span className="text-slate-900 font-medium">{cert}</span>
+                  <Image 
+                    src={cert.image} 
+                    alt={cert.name} 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <span className="text-white font-bold text-sm">{cert.name}</span>
+                  </div>
                 </div>
               ))}
             </div>
