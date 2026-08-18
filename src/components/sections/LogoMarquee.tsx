@@ -1,19 +1,19 @@
 'use client';
 
 const companiesRow1 = [
-  { name: 'Air India', url: 'https://logo.clearbit.com/airindia.com' },
-  { name: 'IndiGo', url: 'https://logo.clearbit.com/goindigo.in' },
-  { name: 'Flipkart Travel', url: 'https://logo.clearbit.com/flipkart.com' },
-  { name: 'Clear Trip', url: 'https://logo.clearbit.com/cleartrip.com' },
-  { name: 'Freelancer', url: 'https://logo.clearbit.com/freelancer.com' }
+  { name: 'Air India', url: 'https://www.google.com/s2/favicons?domain=airindia.com&sz=128' },
+  { name: 'IndiGo', url: 'https://www.google.com/s2/favicons?domain=goindigo.in&sz=128' },
+  { name: 'Flipkart Travel', url: 'https://www.google.com/s2/favicons?domain=flipkart.com&sz=128' },
+  { name: 'Clear Trip', url: 'https://www.google.com/s2/favicons?domain=cleartrip.com&sz=128' },
+  { name: 'Freelancer', url: 'https://www.google.com/s2/favicons?domain=freelancer.com&sz=128' }
 ];
 
 const companiesRow2 = [
-  { name: 'Freelancer', url: 'https://logo.clearbit.com/freelancer.com' },
-  { name: 'Clear Trip', url: 'https://logo.clearbit.com/cleartrip.com' },
-  { name: 'Flipkart Travel', url: 'https://logo.clearbit.com/flipkart.com' },
-  { name: 'IndiGo', url: 'https://logo.clearbit.com/goindigo.in' },
-  { name: 'Air India', url: 'https://logo.clearbit.com/airindia.com' }
+  { name: 'Freelancer', url: 'https://www.google.com/s2/favicons?domain=freelancer.com&sz=128' },
+  { name: 'Clear Trip', url: 'https://www.google.com/s2/favicons?domain=cleartrip.com&sz=128' },
+  { name: 'Flipkart Travel', url: 'https://www.google.com/s2/favicons?domain=flipkart.com&sz=128' },
+  { name: 'IndiGo', url: 'https://www.google.com/s2/favicons?domain=goindigo.in&sz=128' },
+  { name: 'Air India', url: 'https://www.google.com/s2/favicons?domain=airindia.com&sz=128' }
 ];
 
 // Duplicate for infinite scroll
