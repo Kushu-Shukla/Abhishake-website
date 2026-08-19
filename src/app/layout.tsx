@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Abhishek Shukla | Customer Experience & AI-Driven Operations Leader",
+  title: "Abhishek Shukla CX & AI Leader | Author",
   description:
     "Abhishek Shukla — 18+ years transforming operations through AI, automation & human-centered leadership. Author of THE BRIDGE YOU BECOME. Thinkers360 Top Thought Leader.",
   keywords: [
