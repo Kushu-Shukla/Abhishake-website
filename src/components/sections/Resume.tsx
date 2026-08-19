@@ -60,7 +60,7 @@ export function Resume() {
                   <Briefcase className="w-6 h-6" />
                 </div>
                 <h4 className="text-slate-900 font-medium">Experience</h4>
-                <p className="text-slate-500 text-sm">6+ Years</p>
+                <p className="text-slate-500 text-sm">7+ Years</p>
               </div>
               
               <div className="flex flex-col items-center justify-center gap-3">

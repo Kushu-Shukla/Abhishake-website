@@ -9,11 +9,17 @@ Location: Delhi, India (Available Globally)
 ## WHY CONNECT WITH ME?
 
 ### Proven Multi-Client Governance & Scalable Support Engines
-With 6+ years of specialized experience optimizing performance infrastructure across high-demand sectors like travel, aviation, and digital marketplaces, I translate operational complexity into pure margin protection.
+CX & AI Project Leader with 7+ years of experience leading large-scale voice and non-voice customer operations across travel, airline, and customer support environments. Proven track record of delivering service excellence, improving customer journeys, and driving operational performance through data, technology, AI, and people leadership.
 
-**Business Optimization:** As an operational partner managing cross-functional programs on platforms like Freelancer.com, I actively guide multi-client voice and non-voice operations. My implementations consistently sustain a Service Level above 95.5% using predictive real-time monitoring (RTA), keep First Call Resolution (FCR) > 85%, and lower Average Handling Time (AHT) by 15% through strict workflows, deep-dive root cause analysis (RCA), and AI automation toolkits.
+Strong expertise across SLA, AHT, FCR, QA, CSAT, productivity, customer retention, WFM, capacity planning, resource optimization, stakeholder management, and performance governance.
 
-**The 10X GenAI Productivity Edge:** I specialize in integrating modern Generative AI frameworks into legacy corporate architectures. By automating manual reporting flows, systemizing AI-enabled ticketing networks, and leveraging Microsoft 365 Copilot, I help organizations unlock a 10X boost in team productivity, effectively reducing operational overhead while scaling output capacity exponentially.
+Experienced in leading CX and AI-enabled transformation initiatives, including workflow optimization, CRM and technology integration, AI-assisted customer support, process automation, and digital customer experience improvements. Skilled at translating business challenges into structured project plans and partnering with cross-functional teams to deliver measurable outcomes.
+
+Proven ability to lead teams, manage complex escalations, conduct Root Cause Analysis (RCA) and Corrective and Preventive Actions (CAPA), and improve operational efficiency, productivity, and cost effectiveness.
+
+Strong experience in WBR, MBR, and QBR governance, executive stakeholder communication, reporting, compliance, and continuous improvement, with a leadership approach centered on customer-centricity, innovation, AI adoption, trust, and high-performing teams.
+
+My professional focus is at the intersection of Customer Experience, AI, Leadership, and Business Transformation—helping organizations use technology intelligently while keeping people and customer outcomes at the center.
 
 ## CONSULTING & PROFESSIONAL SERVICES
 
