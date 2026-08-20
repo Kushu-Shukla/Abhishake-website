@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/animations';
 import { Star } from 'lucide-react';
 
 const badges = [
-  { rank: 'Top 50', category: 'Lean Startup' },
+  { rank: 'Top 100', category: 'Agile' },
   { rank: 'Top 100', category: 'Agentic AI' },
   { rank: 'Top 100', category: 'Customer Loyalty' },
   { rank: 'Top 100', category: 'Project Management' },
