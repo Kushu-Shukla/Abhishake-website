@@ -49,7 +49,7 @@ My professional focus is at the intersection of Customer Experience, AI, Leaders
 
 ## VERIFIED PROFESSIONAL CERTIFICATIONS
 - Thinkers360 Certified Expert: Leadership
-- Thinkers360 Top 50 Thought Leader: Lean Startup
+- Thinkers360 Top 100 Thought Leader: Agile
 - Knowledge Management Systems and Customer Analytics – IBM SkillsBuild
 - Microsoft 365 Copilot & Effective Leadership – HP LIFE
 - The AI-Driven Project Manager: 10X Your Productivity with Generative AI – LinkedIn Learning (CPE Certified)

@@ -110,7 +110,6 @@ export const siteConfig = {
     ],
     badges: [
       { name: 'Thinkers360 Certified Expert: Leadership', image: '/certificates/thinkers360-leadership.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
-      { name: 'Thinkers360 Top 50 Thought Leader: Lean Startup', image: '/certificates/thinkers360-lean-startup.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
       { name: 'Thinkers360 Top 100 Thought Leader: Agile', image: '/certificates/thinkers360-agile.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
     ],
     certifications: [

@@ -63,10 +63,7 @@ export function Expertise() {
 
         <FadeIn delay={0.4}>
           <div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-4">Recognitions & Badges</h3>
-            <p className="text-slate-600 mb-8 max-w-2xl">
-              Acknowledged globally for thought leadership and expertise in Agile, Lean Startup, and Customer Experience.
-            </p>
+            <h3 className="text-2xl font-semibold text-slate-900 mb-8">Recognitions & Badges</h3>
             <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-16">
               {(siteConfig.expertise as any).badges?.map((badge: any, index: number) => (
                 <a 
