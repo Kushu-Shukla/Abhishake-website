@@ -82,7 +82,47 @@ export function Expertise() {
                   </div>
                 </div>
 
-                {/* Agentic AI, Customer Loyalty, and Project Management removed as requested */}
+                {/* Agentic AI Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                  <h4 className="text-white text-3xl font-bold mb-1">Top 100</h4>
+                  <p className="text-slate-400 text-xs font-semibold tracking-wider mb-6">THOUGHT LEADER</p>
+                  <div className="bg-white w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-black font-bold text-sm">Agentic AI</span>
+                  </div>
+                  <div className="mt-auto opacity-50">
+                    <div className="border border-white/50 rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-white text-center leading-tight">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
+
+                {/* Customer Loyalty Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                  <h4 className="text-white text-3xl font-bold mb-1">Top 100</h4>
+                  <p className="text-slate-400 text-xs font-semibold tracking-wider mb-6">THOUGHT LEADER</p>
+                  <div className="bg-white w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-black font-bold text-sm">Customer Loyalty</span>
+                  </div>
+                  <div className="mt-auto opacity-50">
+                    <div className="border border-white/50 rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-white text-center leading-tight">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Management Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                  <h4 className="text-white text-3xl font-bold mb-1">Top 100</h4>
+                  <p className="text-slate-400 text-xs font-semibold tracking-wider mb-6">THOUGHT LEADER</p>
+                  <div className="bg-white w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-black font-bold text-sm">Project Management</span>
+                  </div>
+                  <div className="mt-auto opacity-50">
+                    <div className="border border-white/50 rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-white text-center leading-tight">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
 
                 {/* Leadership Card */}
                 <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-[#c59a35] shadow-[0_0_15px_rgba(197,154,53,0.3)] flex flex-col items-center">
