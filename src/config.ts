@@ -113,9 +113,10 @@ export const siteConfig = {
       { name: 'Thinkers360 Top 100 Thought Leader: Agile', image: '/certificates/thinkers360-agile.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
     ],
     certifications: [
-      { name: 'Knowledge Management Systems and Customer Analytics - IBM', image: '/certificates/ibm-skillsbuild.jpg' },
-      { name: 'Effective Leadership - HP LIFE', image: '/certificates/hp-life.jpg' },
       { name: 'The AI-Driven Project Manager', image: '/certificates/linkedin-learning.jpg' },
+      { name: 'Effective Leadership - HP LIFE', image: '/certificates/hp-life.jpg' },
+      { name: 'Knowledge Management Systems and Customer Analytics - IBM', image: '/certificates/ibm-skillsbuild.jpg' },
+      { name: 'Lean Six Sigma White Belt', image: '/certificates/lean-six-sigma.jpg' },
     ],
   },
   contact: {
