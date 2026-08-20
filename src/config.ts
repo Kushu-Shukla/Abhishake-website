@@ -109,8 +109,8 @@ export const siteConfig = {
       { name: 'Training & Development', level: 90, category: 'Leadership' },
     ],
     badges: [
-      { name: 'Thinkers360 Certified Expert: Leadership', image: '/certificates/thinkers360-leadership.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
       { name: 'Thinkers360 Top 100 Thought Leader: Agile', image: '/certificates/thinkers360-agile.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
+      { name: 'Thinkers360 Certified Expert: Leadership', image: '/certificates/thinkers360-leadership.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
     ],
     certifications: [
       { name: 'The AI-Driven Project Manager', image: '/certificates/linkedin-learning.jpg' },
