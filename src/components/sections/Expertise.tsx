@@ -63,7 +63,33 @@ export function Expertise() {
 
         <FadeIn delay={0.4}>
           <div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-8">Certifications</h3>
+            <h3 className="text-2xl font-semibold text-slate-900 mb-4">Recognitions & Badges</h3>
+            <p className="text-slate-600 mb-8 max-w-2xl">
+              Acknowledged globally for thought leadership and expertise in Agile, Lean Startup, and Customer Experience.
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-16">
+              {(siteConfig.expertise as any).badges?.map((badge: any, index: number) => (
+                <a 
+                  href={badge.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  key={`badge-${index}`}
+                  className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 bg-black w-48 h-64 flex-shrink-0 border border-slate-800"
+                >
+                  <Image 
+                    src={badge.image} 
+                    alt={badge.name} 
+                    fill 
+                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-semibold text-xs text-center w-full">{badge.name}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <h3 className="text-2xl font-semibold text-slate-900 mb-8">Professional Certifications</h3>
             
             {/* Featured Image Certificates */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

@@ -108,12 +108,14 @@ export const siteConfig = {
       { name: 'Stakeholder Engagement', level: 96, category: 'Leadership' },
       { name: 'Training & Development', level: 90, category: 'Leadership' },
     ],
+    badges: [
+      { name: 'Thinkers360 Certified Expert: Leadership', image: '/certificates/thinkers360-leadership.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
+      { name: 'Thinkers360 Top 50 Thought Leader: Lean Startup', image: '/certificates/thinkers360-lean-startup.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
+      { name: 'Thinkers360 Top 100 Thought Leader: Agile', image: '/certificates/thinkers360-agile.png', link: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader' },
+    ],
     certifications: [
-      { name: 'Thinkers360 Certified Expert: Leadership', image: '/certificates/thinkers360-leadership.png' },
-      { name: 'Thinkers360 Top 50 Thought Leader: Lean Startup', image: '/certificates/thinkers360-lean-startup.png' },
       { name: 'Knowledge Management Systems and Customer Analytics - IBM', image: '/certificates/ibm-skillsbuild.jpg' },
       { name: 'Effective Leadership - HP LIFE', image: '/certificates/hp-life.jpg' },
-      { name: 'Lean Six Sigma White Belt', image: '/certificates/lean-six-sigma.jpg' },
       { name: 'The AI-Driven Project Manager', image: '/certificates/linkedin-learning.jpg' },
     ],
   },
