@@ -39,11 +39,11 @@ export function Process() {
           {/* Badges Column (Right) */}
           <FadeIn direction="left">
             <div className="flex flex-row md:flex-col justify-center items-center gap-6">
-              <div className="relative w-40 h-40 bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-xl border border-slate-200/50 hover:scale-105 transition-transform duration-300">
-                <Image src="/badge1.png" alt="Thinkers360 Top Thought Leaders" fill className="object-contain p-3" />
-              </div>
               <div className="relative w-28 h-40 bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-xl border border-slate-200/50 hover:scale-105 transition-transform duration-300">
                 <Image src="/badge2.png" alt="Thinkers360 Certified Expert" fill className="object-contain p-3" />
+              </div>
+              <div className="relative w-40 h-40 bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-xl border border-slate-200/50 hover:scale-105 transition-transform duration-300">
+                <Image src="/badge1.png" alt="Thinkers360 Top Thought Leaders" fill className="object-contain p-3" />
               </div>
             </div>
           </FadeIn>
