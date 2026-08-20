@@ -109,8 +109,11 @@ export const siteConfig = {
       { name: 'Training & Development', level: 90, category: 'Leadership' },
     ],
     certifications: [
+      { name: 'Thinkers360 Certified Expert: Leadership', image: '/certificates/thinkers360-leadership.png' },
+      { name: 'Thinkers360 Top 50 Thought Leader: Lean Startup', image: '/certificates/thinkers360-lean-startup.png' },
+      { name: 'Knowledge Management Systems and Customer Analytics - IBM', image: '/certificates/ibm-skillsbuild.jpg' },
+      { name: 'Effective Leadership - HP LIFE', image: '/certificates/hp-life.jpg' },
       { name: 'Lean Six Sigma White Belt', image: '/certificates/lean-six-sigma.jpg' },
-      { name: 'YUVA AI For All - TCS iON', image: '/certificates/tcs-ion.jpg' },
       { name: 'The AI-Driven Project Manager', image: '/certificates/linkedin-learning.jpg' },
     ],
   },

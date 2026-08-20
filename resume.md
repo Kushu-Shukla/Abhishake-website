@@ -48,6 +48,10 @@ My professional focus is at the intersection of Customer Experience, AI, Leaders
 - **Live Simulation Sessions:** High-fidelity mock runs to smooth out pacing, build confidence, and ensure expert executive presentation.
 
 ## VERIFIED PROFESSIONAL CERTIFICATIONS
+- Thinkers360 Certified Expert: Leadership
+- Thinkers360 Top 50 Thought Leader: Lean Startup
+- Knowledge Management Systems and Customer Analytics – IBM SkillsBuild
+- Microsoft 365 Copilot & Effective Leadership – HP LIFE
 - The AI-Driven Project Manager: 10X Your Productivity with Generative AI – LinkedIn Learning (CPE Certified)
 - Agile Project Management – PMI Knowledge Systems
 - Customer Experience Leadership – 5PHD Aviation Summit
@@ -55,5 +59,4 @@ My professional focus is at the intersection of Customer Experience, AI, Leaders
 - Diploma in Travel & Tourism Management – Skylark Institute
 - Lean Six Sigma White Belt – Process Optimization
 - Customer Experience (CX) for Business Success
-- Microsoft 365 Copilot & Effective Leadership – HP LIFE
 - Inbound HubSpot Certification
