@@ -63,27 +63,84 @@ export function Expertise() {
 
         <FadeIn delay={0.4}>
           <div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-8">Recognitions & Badges</h3>
-            <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-16">
-              {(siteConfig.expertise as any).badges?.map((badge: any, index: number) => (
-                <a 
-                  href={badge.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  key={`badge-${index}`}
-                  className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 bg-black w-48 h-64 flex-shrink-0 border border-slate-800"
-                >
-                  <Image 
-                    src={badge.image} 
-                    alt={badge.name} 
-                    fill 
-                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-white font-semibold text-xs text-center w-full">{badge.name}</span>
+            <div className="text-center mb-16">
+              <p className="text-blue-600 font-semibold tracking-widest uppercase text-sm mb-2">INDUSTRY RECOGNITION</p>
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12">Top Thought Leader by <span className="text-purple-600">Thinkers360</span></h3>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                {/* Agile Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                  <h4 className="text-white text-3xl font-bold mb-1">Top 100</h4>
+                  <p className="text-slate-400 text-xs font-semibold tracking-wider mb-6">THOUGHT LEADER</p>
+                  <div className="bg-white w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-black font-bold text-sm">Agile</span>
                   </div>
-                </a>
-              ))}
+                  <div className="mt-auto opacity-50">
+                    <div className="border border-white/50 rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-white text-center leading-tight">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
+
+                {/* Agentic AI Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                  <h4 className="text-white text-3xl font-bold mb-1">Top 100</h4>
+                  <p className="text-slate-400 text-xs font-semibold tracking-wider mb-6">THOUGHT LEADER</p>
+                  <div className="bg-white w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-black font-bold text-sm">Agentic AI</span>
+                  </div>
+                  <div className="mt-auto opacity-50">
+                    <div className="border border-white/50 rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-white text-center leading-tight">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
+
+                {/* Customer Loyalty Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                  <h4 className="text-white text-3xl font-bold mb-1">Top 100</h4>
+                  <p className="text-slate-400 text-xs font-semibold tracking-wider mb-6">THOUGHT LEADER</p>
+                  <div className="bg-white w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-black font-bold text-sm">Customer Loyalty</span>
+                  </div>
+                  <div className="mt-auto opacity-50">
+                    <div className="border border-white/50 rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-white text-center leading-tight">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Management Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+                  <h4 className="text-white text-3xl font-bold mb-1">Top 100</h4>
+                  <p className="text-slate-400 text-xs font-semibold tracking-wider mb-6">THOUGHT LEADER</p>
+                  <div className="bg-white w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-black font-bold text-sm">Project Management</span>
+                  </div>
+                  <div className="mt-auto opacity-50">
+                    <div className="border border-white/50 rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-white text-center leading-tight">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
+
+                {/* Leadership Card */}
+                <div className="bg-[#0a0a0a] rounded-xl w-[200px] p-6 border border-[#c59a35] shadow-[0_0_15px_rgba(197,154,53,0.3)] flex flex-col items-center">
+                  <p className="text-slate-200 text-xs font-semibold tracking-wider mb-2">CERTIFIED EXPERT</p>
+                  <svg className="w-8 h-8 text-[#c59a35] mb-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <div className="bg-gradient-to-r from-[#8a6b24] via-[#c59a35] to-[#8a6b24] w-full py-2 mb-8 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm tracking-wider">LEADERSHIP</span>
+                  </div>
+                  <div className="mt-auto">
+                    <div className="border border-[#c59a35] rounded-b-full w-12 h-14 flex items-center justify-center text-[10px] text-[#c59a35] text-center leading-tight shadow-[0_0_5px_rgba(197,154,53,0.3)]">
+                      thinkers<br/>360
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
             <h3 className="text-2xl font-semibold text-slate-900 mb-8">Professional Certifications</h3>
