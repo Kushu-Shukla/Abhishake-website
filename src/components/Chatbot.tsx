@@ -17,11 +17,26 @@ export default function Chatbot() {
     setMessages((prev) => [...prev, { text: input, isBot: false }]);
     setInput("");
     
-    // Simulate bot response
+    // Simulate smart bot response based on keywords
     setTimeout(() => {
+      const lowerInput = input.toLowerCase();
+      let reply = "Thanks for reaching out! Abhishek is currently away, but he will get back to you soon. Feel free to explore his CX & AI Consulting Services, download his resume, or check out his books!";
+      
+      if (lowerInput.includes("service") || lowerInput.includes("consulting") || lowerInput.includes("hire")) {
+        reply = "Abhishek offers premium CX & AI Consulting Services, including GenAI workflow automation, Customer Experience transformation, and Leadership coaching. Would you like to go to the Services section?";
+      } else if (lowerInput.includes("resume") || lowerInput.includes("cv") || lowerInput.includes("experience")) {
+        reply = "You can download Abhishek''s full resume by clicking the 'Resume' button at the top of the page! He has 7+ years of experience in CX and AI Project Leadership.";
+      } else if (lowerInput.includes("book") || lowerInput.includes("bridge you become")) {
+        reply = "Abhishek is the author of 'THE BRIDGE YOU BECOME'. You can find more details about his writing in the Books section below!";
+      } else if (lowerInput.includes("hi") || lowerInput.includes("hello") || lowerInput.includes("hey")) {
+        reply = "Hello there! How can I help you today? You can ask me about Abhishek''s services, his resume, or his books.";
+      } else if (lowerInput.includes("contact") || lowerInput.includes("email") || lowerInput.includes("reach")) {
+        reply = "You can reach Abhishek directly through the Contact Form at the bottom of the page, or connect with him on LinkedIn!";
+      }
+
       setMessages((prev) => [
         ...prev,
-        { text: "Thanks for reaching out! Abhishek is currently away, but he will get back to you soon. Feel free to explore his CX & AI Consulting Services, download his resume, or check out his books!", isBot: true },
+        { text: reply, isBot: true },
       ]);
     }, 1000);
   };
