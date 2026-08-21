@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send } from "lucide-react";
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<{text: React.ReactNode, isBot: boolean}[]>([
     { text: "Hi! I am Abhishek's AI Assistant. How can I help you today?", isBot: true },
   ]);
   const [input, setInput] = useState("");
@@ -20,7 +20,7 @@ export default function Chatbot() {
     // Simulate smart bot response based on keywords
     setTimeout(() => {
       const lowerInput = input.toLowerCase();
-      let reply = "Thanks for reaching out! Abhishek is currently away, but he will get back to you soon. Feel free to explore his CX & AI Consulting Services, download his resume, or check out his books!";
+      let reply: React.ReactNode = "Thanks for reaching out! Abhishek is currently away, but he will get back to you soon. Feel free to explore his CX & AI Consulting Services, download his resume, or check out his books!";
       
       if (lowerInput.includes("why") && (lowerInput.includes("buy") || lowerInput.includes("hire") || lowerInput.includes("choose"))) {
         reply = "Great question! You should work with Abhishek because he is a Top 100 Global Thought Leader in Agile & Customer Loyalty (Thinkers360). He uniquely combines 7+ years of Customer Experience (CX) leadership with advanced AI Automation (GenAI). He doesn't just consult; he guarantees 10X productivity growth and operational excellence.";
@@ -34,8 +34,15 @@ export default function Chatbot() {
         reply = "His core competencies include: Customer Experience Strategy, AI & Prompt Engineering (GenAI), Agile Project Management, Data Analytics, and Lean Six Sigma methodologies.";
       } else if (lowerInput.includes("hi") || lowerInput.includes("hello") || lowerInput.includes("hey") || lowerInput.includes("greetings")) {
         reply = "Hello there! 👋 I am Abhishek's AI Assistant. You can ask me why you should hire him, what his skills are, or about his book 'The Bridge You Become'!";
-      } else if (lowerInput.includes("contact") || lowerInput.includes("email") || lowerInput.includes("reach") || lowerInput.includes("message") || lowerInput.includes("call")) {
-        reply = "You can reach Abhishek directly through the Contact Form at the bottom of the page, or connect with him on LinkedIn and Twitter!";
+      } else if (lowerInput.includes("mail") || lowerInput.includes("email") || lowerInput.includes("contact") || lowerInput.includes("message")) {
+        reply = (
+          <span>
+            You can email Abhishek directly right now by clicking here: <br /><br />
+            <a href="mailto:abhishekshukla16102000@gmail.com" className="font-bold underline text-blue-600 dark:text-blue-400">
+              abhishekshukla16102000@gmail.com
+            </a>
+          </span>
+        );
       } else if (lowerInput.includes("cost") || lowerInput.includes("price") || lowerInput.includes("rate") || lowerInput.includes("charge")) {
         reply = "Abhishek's consulting rates depend on the scope of the project (whether it's AI integration, CX transformation, or leadership coaching). Please use the Contact form to request a custom quote!";
       } else if (lowerInput.includes("who are you") || lowerInput.includes("what are you") || lowerInput.includes("bot")) {
