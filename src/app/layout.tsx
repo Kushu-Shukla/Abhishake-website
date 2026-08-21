@@ -51,7 +51,6 @@ export const metadata: Metadata = {
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";
-import Chatbot from "@/components/Chatbot";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -82,7 +81,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <CustomCursor />
           {children}
-          <Chatbot />
         </ThemeProvider>
       </body>
     </html>
