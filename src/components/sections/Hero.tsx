@@ -38,9 +38,9 @@ export default function Hero() {
             </FadeIn>
             
             <FadeIn delay={0.6} direction="up">
-              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-medium mb-8 flex items-center gap-3">
+              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-200 dark:text-slate-300 font-medium mb-8 flex items-center gap-3">
                 CX & AI Project Leader 
-                <span className="text-slate-300 dark:text-slate-700">|</span> 
+                <span className="text-slate-300 dark:text-slate-700 dark:text-slate-200">|</span> 
                 Author
               </p>
             </FadeIn>
@@ -53,7 +53,7 @@ export default function Hero() {
             </FadeIn>
             
             <FadeIn delay={0.8} direction="up">
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-xl">
+              <p className="text-lg text-slate-600 dark:text-slate-300 dark:text-slate-400 leading-relaxed mb-10 max-w-xl">
                 Driving Operational Excellence, 10X GenAI Productivity, and Strategic Career Growth.
               </p>
             </FadeIn>
@@ -67,7 +67,7 @@ export default function Hero() {
               </Link>
               <Link 
                 href="#contact" 
-                className="px-8 py-4 rounded-full border border-slate-300 text-slate-900 hover:border-blue-500 hover:text-blue-600 hover:scale-105 transition-all duration-300 glass-subtle"
+                className="px-8 py-4 rounded-full border border-slate-300 text-slate-900 dark:text-white hover:border-blue-500 hover:text-blue-600 hover:scale-105 transition-all duration-300 glass-subtle"
               >
                 Let&apos;s Connect
               </Link>

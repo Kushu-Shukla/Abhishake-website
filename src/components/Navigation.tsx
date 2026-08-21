@@ -134,7 +134,7 @@ export default function Navigation() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-slate-600 hover:text-slate-900 z-50 relative"
+          className="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:text-white z-50 relative"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -150,7 +150,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-20 bg-white/95 backdrop-blur-3xl z-40 md:hidden flex flex-col p-6 border-t border-slate-200"
+            className="fixed inset-0 top-20 bg-white dark:bg-slate-950/95 backdrop-blur-3xl z-40 md:hidden flex flex-col p-6 border-t border-slate-200"
           >
             <div className="flex flex-col gap-6 mt-8">
               {siteConfig.navLinks.map((link) => {
@@ -161,7 +161,7 @@ export default function Navigation() {
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
                     className={`text-2xl font-bold tracking-tight ${
-                      isActive ? "text-blue-600" : "text-slate-900"
+                      isActive ? "text-blue-600" : "text-slate-900 dark:text-white"
                     }`}
                   >
                     {link.label}

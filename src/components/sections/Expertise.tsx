@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export function Expertise() {
   return (
-    <section id="expertise" className="py-24 md:py-32 bg-slate-50/30 relative overflow-hidden">
+    <section id="expertise" className="py-24 md:py-32 bg-slate-50 dark:bg-slate-900/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <FadeIn>
@@ -18,7 +18,7 @@ export function Expertise() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue">
                 {siteConfig.expertise.title || 'Skills & Certifications'}
               </h2>
-              <p className="text-slate-600 text-lg max-w-2xl">
+              <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl">
                 {siteConfig.expertise.subtitle || 'A comprehensive overview of my technical skills, tools, and professional certifications.'}
               </p>
             </div>
@@ -32,12 +32,12 @@ export function Expertise() {
         </div>
 
         <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-slate-900 mb-8">Core Competencies</h3>
+          <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-8">Core Competencies</h3>
           <div className="flex flex-wrap gap-4">
             {siteConfig.expertise.skills.map((skill: any, index: number) => (
               <FadeIn key={skill.name} delay={index * 0.05}>
-                <div className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 py-4 rounded-xl flex flex-col">
-                  <h4 className="text-slate-900 font-semibold text-lg">{skill.name}</h4>
+                <div className="bg-white dark:bg-slate-950 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 py-4 rounded-xl flex flex-col">
+                  <h4 className="text-slate-900 dark:text-white font-semibold text-lg">{skill.name}</h4>
                   <span className="text-sm text-blue-600 font-medium mt-1">
                     {skill.category}
                   </span>
@@ -49,7 +49,7 @@ export function Expertise() {
 
         <FadeIn delay={0.4}>
           <div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-8">Professional Certifications</h3>
+            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-8">Professional Certifications</h3>
             
             {/* Featured Image Certificates */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -58,7 +58,7 @@ export function Expertise() {
                 .map((cert: any, index: number) => (
                 <div 
                   key={`img-${index}`}
-                  className="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white aspect-[4/3]"
+                  className="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-950 aspect-[4/3]"
                 >
                   <Image 
                     src={cert.image} 

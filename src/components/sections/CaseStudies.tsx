@@ -32,7 +32,7 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-24 md:py-32 relative overflow-hidden bg-slate-50/50">
+    <section id="case-studies" className="py-24 md:py-32 relative overflow-hidden bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <FadeIn direction="up">
           <div className="text-center mb-16 md:mb-24">
@@ -42,7 +42,7 @@ export function CaseStudies() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue">
               Real Impact & Case Studies
             </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto">
               How I leverage Artificial Intelligence and Customer Experience strategies to deliver measurable, multi-million dollar growth for enterprise organizations.
             </p>
           </div>
@@ -61,7 +61,7 @@ export function CaseStudies() {
                       <Icon className="w-8 h-8" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-slate-800 mb-1">{study.company}</h3>
+                      <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1">{study.company}</h3>
                       <p className="text-blue-600 font-medium">{study.role}</p>
                     </div>
                   </div>
@@ -70,11 +70,11 @@ export function CaseStudies() {
                   <div className="space-y-6 flex-grow mb-10">
                     <div>
                       <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">The Challenge</h4>
-                      <p className="text-slate-600 leading-relaxed">{study.problem}</p>
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{study.problem}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">The AI/CX Solution</h4>
-                      <p className="text-slate-600 leading-relaxed">{study.solution}</p>
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{study.solution}</p>
                     </div>
                   </div>
 
@@ -85,7 +85,7 @@ export function CaseStudies() {
                       return (
                         <div key={rIdx} className="text-center">
                           <MetricIcon className="w-5 h-5 text-blue-500 mx-auto mb-2 opacity-70" />
-                          <div className="text-2xl md:text-3xl font-extrabold text-slate-800 mb-1">
+                          <div className="text-2xl md:text-3xl font-extrabold text-slate-800 dark:text-slate-100 mb-1">
                             {result.value}
                           </div>
                           <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">

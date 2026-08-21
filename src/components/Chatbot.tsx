@@ -50,12 +50,12 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-16 right-0 w-[320px] sm:w-[350px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col"
+            className="absolute bottom-16 right-0 w-[320px] sm:w-[350px] bg-white dark:bg-slate-950 dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-white dark:bg-slate-950/20 flex items-center justify-center text-white font-bold text-sm">
                   AI
                 </div>
                 <div>
@@ -72,7 +72,7 @@ export default function Chatbot() {
             </div>
 
             {/* Chat Area */}
-            <div className="h-[300px] p-4 overflow-y-auto flex flex-col gap-3 bg-slate-50 dark:bg-slate-950/50">
+            <div className="h-[300px] p-4 overflow-y-auto flex flex-col gap-3 bg-slate-50 dark:bg-slate-900 dark:bg-slate-950/50">
               {messages.map((msg, idx) => (
                 <div 
                   key={idx} 
@@ -81,7 +81,7 @@ export default function Chatbot() {
                   <div 
                     className={`max-w-[80%] p-3 rounded-2xl text-sm ${
                       msg.isBot 
-                        ? "bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-slate-100 dark:border-slate-700 rounded-tl-sm" 
+                        ? "bg-white dark:bg-slate-950 dark:bg-slate-800 text-slate-800 dark:text-slate-100 dark:text-slate-200 shadow-sm border border-slate-100 dark:border-slate-700 rounded-tl-sm" 
                         : "bg-blue-600 text-white rounded-tr-sm"
                     }`}
                   >
@@ -92,7 +92,7 @@ export default function Chatbot() {
             </div>
 
             {/* Input Area */}
-            <div className="p-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex gap-2">
+            <div className="p-3 bg-white dark:bg-slate-950 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex gap-2">
               <input 
                 type="text" 
                 value={input}

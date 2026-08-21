@@ -20,7 +20,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white border-t border-slate-200 relative overflow-hidden">
+    <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
       
@@ -32,7 +32,7 @@ export default function Footer() {
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 group-hover:border-blue-500 transition-colors">
                 <Image src={siteConfig.profileImage} alt="Abhishek Shukla" fill className="object-cover" />
               </div>
-              <span className="text-slate-900 font-bold text-xl tracking-wide">
+              <span className="text-slate-900 dark:text-white font-bold text-xl tracking-wide">
                 Abhishek Shukla
               </span>
             </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-slate-900 font-semibold mb-2">Quick Links</h3>
+            <h3 className="text-slate-900 dark:text-white font-semibold mb-2">Quick Links</h3>
             <ul className="flex flex-col gap-3">
               {siteConfig.navLinks.map((link) => (
                 <li key={link.label}>
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Socials */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-slate-900 font-semibold mb-2">Connect</h3>
+            <h3 className="text-slate-900 dark:text-white font-semibold mb-2">Connect</h3>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
@@ -70,7 +70,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 hover:scale-110 hover:shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-slate-100 dark:bg-slate-800 hover:scale-110 hover:shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all duration-300"
                     aria-label={social.name}
                   >
                     <Icon className="w-5 h-5" />
@@ -92,7 +92,7 @@ export default function Footer() {
             className="group flex items-center gap-2 text-sm text-slate-500 hover:text-blue-600 transition-colors"
           >
             Back to top
-            <span className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors">
+            <span className="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-900 flex items-center justify-center group-hover:bg-slate-100 dark:bg-slate-800 transition-colors">
               <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
             </span>
           </button>

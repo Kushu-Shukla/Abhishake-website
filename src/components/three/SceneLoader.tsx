@@ -18,7 +18,7 @@ function LoadingState() {
 
 function FallbackState() {
   return (
-    <div className="absolute inset-0 bg-white overflow-hidden z-0">
+    <div className="absolute inset-0 bg-white dark:bg-slate-950 overflow-hidden z-0">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-slate-50 to-slate-100"></div>
       <div className="absolute inset-0 opacity-20">
         {[...Array(20)].map((_, i) => (

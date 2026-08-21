@@ -22,7 +22,7 @@ const marqueeRow2 = [...companiesRow2, ...companiesRow2, ...companiesRow2, ...co
 
 function CompanyBox({ company }: { company: { name: string, url: string } }) {
   return (
-    <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex items-center justify-center p-3 md:p-4 mx-3 md:mx-4 shrink-0 transition-transform duration-300 hover:scale-110 cursor-pointer">
+    <div className="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-slate-950 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 flex items-center justify-center p-3 md:p-4 mx-3 md:mx-4 shrink-0 transition-transform duration-300 hover:scale-110 cursor-pointer">
       <div className="relative w-full h-full flex items-center justify-center">
         {/* Using standard img tag to bypass Next.js external image hostname restrictions */}
         <img 
@@ -44,7 +44,7 @@ function CompanyBox({ company }: { company: { name: string, url: string } }) {
 
 export function LogoMarquee() {
   return (
-    <section className="py-16 md:py-24 border-y border-slate-200/50 bg-slate-50/50 overflow-hidden relative">
+    <section className="py-16 md:py-24 border-y border-slate-200/50 bg-slate-50 dark:bg-slate-900/50 overflow-hidden relative">
       {/* Fade edges */}
       <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>

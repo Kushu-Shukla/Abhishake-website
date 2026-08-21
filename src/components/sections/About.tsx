@@ -39,7 +39,7 @@ export default function About() {
               <TextReveal text="Building the Future" className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue" />
             </FadeIn>
             
-            <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
+            <div className="space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
               {paragraphs.map((paragraph: string, idx: number) => (
                 <FadeIn key={idx} delay={0.2 + (idx * 0.1)} direction="right">
                   <p>{paragraph}</p>
@@ -71,13 +71,13 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat: { value: string; label: string }, idx: number) => (
             <FadeIn key={idx} delay={0.2 + (idx * 0.1)} direction="up" className="h-full">
-              <div className="glass h-full p-8 rounded-2xl flex flex-col justify-center items-center text-center border border-transparent hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group bg-slate-50">
+              <div className="glass h-full p-8 rounded-2xl flex flex-col justify-center items-center text-center border border-transparent hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group bg-slate-50 dark:bg-slate-900">
                 <div className="text-4xl lg:text-5xl font-bold mb-3">
                   <span className="text-gradient-blue group-hover:text-blue-500 transition-all duration-500">
                     {stat.value}
                   </span>
                 </div>
-                <div className="text-sm text-slate-600 font-medium tracking-wide uppercase">
+                <div className="text-sm text-slate-600 dark:text-slate-300 font-medium tracking-wide uppercase">
                   {stat.label}
                 </div>
               </div>

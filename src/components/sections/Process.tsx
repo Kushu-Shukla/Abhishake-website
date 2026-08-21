@@ -21,7 +21,7 @@ export function Process() {
               <h2 className="text-4xl md:text-5xl font-bold text-gradient-blue mb-6">
                 How I Work
               </h2>
-              <p className="text-slate-600 text-lg">
+              <p className="text-slate-600 dark:text-slate-300 text-lg">
                 {siteConfig.process?.subtitle || "My structured approach to solving problems and delivering high-quality solutions."}
               </p>
             </div>
@@ -72,13 +72,13 @@ export function Process() {
                           0{index + 1}
                         </div>
                         
-                        <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-4">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-4">
                           <span className="text-blue-600 font-mono text-sm border border-blue-600/30 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
                             {index + 1}
                           </span>
                           {step.title}
                         </h3>
-                        <p className="text-slate-600 leading-relaxed relative z-10">
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed relative z-10">
                           {step.description}
                         </p>
                       </div>
