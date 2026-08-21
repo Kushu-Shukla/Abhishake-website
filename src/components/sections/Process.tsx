@@ -9,7 +9,7 @@ export function Process() {
   const steps = siteConfig.process?.steps || [];
 
   return (
-    <section id="process" className="py-24 md:py-32 relative z-10">
+    <section id="process" className="py-12 md:py-16 md:py-32 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Section */}

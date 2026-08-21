@@ -16,7 +16,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-16 md:py-32 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
       
@@ -34,7 +34,7 @@ export function Contact() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.2} className="w-full max-w-4xl mb-16">
+        <FadeIn delay={0.2} className="w-full max-w-4xl mb-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="glass p-8 rounded-2xl flex flex-col items-center group hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-full bg-slate-50 dark:bg-slate-900/50 flex items-center justify-center mb-6 group-hover:bg-blue-600/10 transition-colors duration-300">

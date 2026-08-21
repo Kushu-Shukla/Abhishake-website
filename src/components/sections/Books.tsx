@@ -7,10 +7,10 @@ import { ExternalLink } from 'lucide-react';
 
 export default function Books() {
   return (
-    <section id="books" className="py-24 md:py-32 bg-slate-50 dark:bg-slate-900 relative z-10">
+    <section id="books" className="py-12 md:py-16 md:py-32 bg-slate-50 dark:bg-slate-900 relative z-10">
       <div className="container max-w-7xl mx-auto px-6">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-16">
+          <div className="flex items-center gap-4 mb-10">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
               {siteConfig.books.title}
             </h2>

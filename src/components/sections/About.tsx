@@ -21,13 +21,13 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="about" className="relative py-12 md:py-16 md:py-32 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[128px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[128px] translate-x-1/2 pointer-events-none" />
       
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-10">
           
           {/* Left Column - Bio */}
           <div className="space-y-8">

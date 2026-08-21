@@ -7,9 +7,9 @@ import Image from 'next/image';
 
 export function Expertise() {
   return (
-    <section id="expertise" className="py-24 md:py-32 bg-slate-50 dark:bg-slate-900/30 relative overflow-hidden">
+    <section id="expertise" className="py-12 md:py-16 md:py-32 bg-slate-50 dark:bg-slate-900/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
           <FadeIn>
             <div>
               <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">

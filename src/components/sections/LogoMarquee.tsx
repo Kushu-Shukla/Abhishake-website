@@ -44,7 +44,7 @@ function CompanyBox({ company }: { company: { name: string, url: string } }) {
 
 export function LogoMarquee() {
   return (
-    <section className="py-16 md:py-24 border-y border-slate-200/50 bg-slate-50 dark:bg-slate-900/50 overflow-hidden relative">
+    <section className="py-16 md:py-12 md:py-16 border-y border-slate-200/50 bg-slate-50 dark:bg-slate-900/50 overflow-hidden relative">
       {/* Fade edges */}
       <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>

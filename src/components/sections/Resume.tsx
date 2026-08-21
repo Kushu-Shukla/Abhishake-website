@@ -7,11 +7,11 @@ import Image from 'next/image';
 
 export function Resume() {
   return (
-    <section id="resume" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="resume" className="py-12 md:py-16 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
         
         {/* Collage Images replacing Banner */}
-        <div className="w-full max-w-6xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="w-full max-w-6xl mx-auto mb-10 grid grid-cols-1 md:grid-cols-2 gap-8">
           <FadeIn direction="right">
             <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
               <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay pointer-events-none"></div>
@@ -45,7 +45,7 @@ export function Resume() {
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold px-10 py-5 rounded-full text-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-300 mb-16"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold px-10 py-5 rounded-full text-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-300 mb-10"
           >
             <Download className="w-6 h-6" />
             Download Resume

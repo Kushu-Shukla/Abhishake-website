@@ -12,10 +12,10 @@ const badges = [
 
 export function Recognitions() {
   return (
-    <section id="recognitions" className="py-24 relative overflow-hidden bg-white dark:bg-slate-950">
+    <section id="recognitions" className="py-12 md:py-16 relative overflow-hidden bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <FadeIn direction="up">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
               Industry Recognition
             </span>

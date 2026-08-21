@@ -32,10 +32,10 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-24 md:py-32 relative overflow-hidden bg-slate-50 dark:bg-slate-900/50">
+    <section id="case-studies" className="py-12 md:py-16 md:py-32 relative overflow-hidden bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <FadeIn direction="up">
-          <div className="text-center mb-16 md:mb-24">
+          <div className="text-center mb-10 md:mb-24">
             <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
               PROVEN RESULTS
             </span>

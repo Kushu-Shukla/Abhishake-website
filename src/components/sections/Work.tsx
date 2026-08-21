@@ -111,9 +111,9 @@ export function Work() {
   };
   
   return (
-    <section id="work" className="py-24 md:py-32 bg-slate-50 dark:bg-slate-900/30 relative z-10">
+    <section id="work" className="py-12 md:py-16 md:py-32 bg-slate-50 dark:bg-slate-900/30 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-10 md:mb-24 gap-12">
           <FadeIn direction="right" className="md:w-2/3 text-left">
             <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">SELECTED WORK</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-blue mb-6">
