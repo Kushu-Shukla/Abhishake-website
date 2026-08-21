@@ -22,16 +22,24 @@ export default function Chatbot() {
       const lowerInput = input.toLowerCase();
       let reply = "Thanks for reaching out! Abhishek is currently away, but he will get back to you soon. Feel free to explore his CX & AI Consulting Services, download his resume, or check out his books!";
       
-      if (lowerInput.includes("service") || lowerInput.includes("consulting") || lowerInput.includes("hire")) {
-        reply = "Abhishek offers premium CX & AI Consulting Services, including GenAI workflow automation, Customer Experience transformation, and Leadership coaching. Would you like to go to the Services section?";
-      } else if (lowerInput.includes("resume") || lowerInput.includes("cv") || lowerInput.includes("experience")) {
-        reply = "You can download Abhishek''s full resume by clicking the 'Resume' button at the top of the page! He has 7+ years of experience in CX and AI Project Leadership.";
-      } else if (lowerInput.includes("book") || lowerInput.includes("bridge you become")) {
-        reply = "Abhishek is the author of 'THE BRIDGE YOU BECOME'. You can find more details about his writing in the Books section below!";
-      } else if (lowerInput.includes("hi") || lowerInput.includes("hello") || lowerInput.includes("hey")) {
-        reply = "Hello there! How can I help you today? You can ask me about Abhishek''s services, his resume, or his books.";
-      } else if (lowerInput.includes("contact") || lowerInput.includes("email") || lowerInput.includes("reach")) {
-        reply = "You can reach Abhishek directly through the Contact Form at the bottom of the page, or connect with him on LinkedIn!";
+      if (lowerInput.includes("why") && (lowerInput.includes("buy") || lowerInput.includes("hire") || lowerInput.includes("choose"))) {
+        reply = "Great question! You should work with Abhishek because he is a Top 100 Global Thought Leader in Agile & Customer Loyalty (Thinkers360). He uniquely combines 7+ years of Customer Experience (CX) leadership with advanced AI Automation (GenAI). He doesn't just consult; he guarantees 10X productivity growth and operational excellence.";
+      } else if (lowerInput.includes("service") || lowerInput.includes("consulting") || lowerInput.includes("offer")) {
+        reply = "Abhishek offers premium CX & AI Consulting Services. This includes GenAI workflow automation, Customer Experience transformation, and Leadership coaching to scale businesses efficiently. Check out the Work/Services section for case studies!";
+      } else if (lowerInput.includes("resume") || lowerInput.includes("cv") || lowerInput.includes("experience") || lowerInput.includes("background")) {
+        reply = "Abhishek has 7+ years of high-level experience as a CX & AI Project Leader. He holds certifications from IBM and HP Life, and is an expert in Lean Six Sigma. You can download his full resume using the blue button at the top of the page!";
+      } else if (lowerInput.includes("book") || lowerInput.includes("bridge you become") || lowerInput.includes("author") || lowerInput.includes("writing")) {
+        reply = "Yes! Abhishek is the proud author of 'THE BRIDGE YOU BECOME'. It focuses on leadership, personal growth, and navigating career challenges. You can find purchase links in the Books section below.";
+      } else if (lowerInput.includes("skill") || lowerInput.includes("tech") || lowerInput.includes("tool") || lowerInput.includes("know")) {
+        reply = "His core competencies include: Customer Experience Strategy, AI & Prompt Engineering (GenAI), Agile Project Management, Data Analytics, and Lean Six Sigma methodologies.";
+      } else if (lowerInput.includes("hi") || lowerInput.includes("hello") || lowerInput.includes("hey") || lowerInput.includes("greetings")) {
+        reply = "Hello there! 👋 I am Abhishek's AI Assistant. You can ask me why you should hire him, what his skills are, or about his book 'The Bridge You Become'!";
+      } else if (lowerInput.includes("contact") || lowerInput.includes("email") || lowerInput.includes("reach") || lowerInput.includes("message") || lowerInput.includes("call")) {
+        reply = "You can reach Abhishek directly through the Contact Form at the bottom of the page, or connect with him on LinkedIn and Twitter!";
+      } else if (lowerInput.includes("cost") || lowerInput.includes("price") || lowerInput.includes("rate") || lowerInput.includes("charge")) {
+        reply = "Abhishek's consulting rates depend on the scope of the project (whether it's AI integration, CX transformation, or leadership coaching). Please use the Contact form to request a custom quote!";
+      } else if (lowerInput.includes("who are you") || lowerInput.includes("what are you") || lowerInput.includes("bot")) {
+        reply = "I am a custom AI assistant built exclusively for Abhishek Shukla's portfolio. I am here to help you learn more about his expertise in CX and AI!";
       }
 
       setMessages((prev) => [
