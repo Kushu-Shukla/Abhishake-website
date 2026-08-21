@@ -5,21 +5,18 @@ import { Star } from 'lucide-react';
 
 const badges = [
   { rank: 'Top 100', category: 'Agile' },
-  { rank: 'Top 100', category: 'Agentic AI' },
-  { rank: 'Top 100', category: 'Customer Loyalty' },
-  { rank: 'Top 100', category: 'Project Management' },
 ];
 
 export function Recognitions() {
   return (
-    <section id="recognitions" className="py-24 relative overflow-hidden bg-white">
+    <section id="recognitions" className="py-24 relative overflow-hidden bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <FadeIn direction="up">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
               Industry Recognition
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
               Top Thought Leader by <span className="text-gradient-blue">Thinkers360</span>
             </h2>
           </div>
@@ -27,8 +24,8 @@ export function Recognitions() {
 
         <div className="flex flex-wrap justify-center gap-8 items-stretch">
           
-          {/* The 4 Standard Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* The Standard Badge */}
+          <div className="flex justify-center gap-6">
             {badges.map((badge, idx) => (
               <FadeIn key={idx} delay={0.1 * idx} direction="up">
                 <div className="bg-[#0a0a0a] rounded-2xl p-6 border-2 border-slate-800 flex flex-col items-center justify-between h-full min-w-[160px] shadow-2xl hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 hover:-translate-y-2 group cursor-default">

@@ -50,9 +50,12 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Chatbot from "@/components/Chatbot";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -75,9 +78,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-slate-900">
-        <CustomCursor />
-        {children}
+      <body className="min-h-full flex flex-col bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <CustomCursor />
+          {children}
+          <Chatbot />
+        </ThemeProvider>
       </body>
     </html>
   );

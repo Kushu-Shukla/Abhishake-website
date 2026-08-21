@@ -32,29 +32,15 @@ export function Expertise() {
         </div>
 
         <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-slate-900 mb-8">Technical Skills</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h3 className="text-2xl font-semibold text-slate-900 mb-8">Core Competencies</h3>
+          <div className="flex flex-wrap gap-4">
             {siteConfig.expertise.skills.map((skill: any, index: number) => (
-              <FadeIn key={skill.name} delay={index * 0.1}>
-                <div className="glass p-5 rounded-2xl relative overflow-hidden group hover:border-blue-500/30 transition-colors duration-300">
-                  <div className="flex justify-between items-center mb-4">
-                    <div>
-                      <h4 className="text-slate-900 font-medium text-lg">{skill.name}</h4>
-                      <span className="text-xs px-2 py-1 rounded-full bg-slate-100/50 text-slate-600 mt-1 inline-block">
-                        {skill.category}
-                      </span>
-                    </div>
-                    <span className="text-slate-400 text-sm font-medium">{skill.level}%</span>
-                  </div>
-                  <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 1, delay: 0.2 + index * 0.1, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"
-                    />
-                  </div>
+              <FadeIn key={skill.name} delay={index * 0.05}>
+                <div className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 py-4 rounded-xl flex flex-col">
+                  <h4 className="text-slate-900 font-semibold text-lg">{skill.name}</h4>
+                  <span className="text-sm text-blue-600 font-medium mt-1">
+                    {skill.category}
+                  </span>
                 </div>
               </FadeIn>
             ))}

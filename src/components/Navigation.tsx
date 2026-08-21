@@ -5,6 +5,7 @@ import { Menu, X, Download } from "lucide-react";
 import { siteConfig } from "@/config";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -119,6 +120,7 @@ export default function Navigation() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           <a
             href={siteConfig.resumeUrl}
             target="_blank"
@@ -166,7 +168,10 @@ export default function Navigation() {
                   </a>
                 );
               })}
-              <div className="w-full h-px bg-white/10 my-4" />
+              <div className="w-full h-px bg-slate-200 dark:bg-slate-800 my-4" />
+              <div className="flex justify-center mb-4">
+                <ThemeToggle />
+              </div>
               <a
                 href={siteConfig.resumeUrl}
                 target="_blank"
