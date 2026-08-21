@@ -82,19 +82,19 @@ export default function Navigation() {
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled 
-          ? "bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-[0_4px_30px_rgba(0,212,255,0.05)]" 
+          ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-[0_4px_30px_rgba(0,212,255,0.05)]" 
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2 z-50">
-          <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center group-hover:border-blue-500/50 transition-colors">
+          <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:border-blue-500/50 transition-colors">
             <span className="text-lg font-bold bg-gradient-to-br from-blue-600 to-blue-500 bg-clip-text text-transparent">
               AS
             </span>
           </div>
-          <span className="text-slate-900 font-semibold hidden sm:block tracking-wide group-hover:text-blue-600 transition-colors">
+          <span className="text-slate-900 dark:text-white font-semibold hidden sm:block tracking-wide group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
             Abhishek Shukla
           </span>
         </Link>
@@ -108,8 +108,8 @@ export default function Navigation() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isActive ? "text-blue-600" : "text-slate-600"
+                className={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
+                  isActive ? "text-blue-600 dark:text-blue-400" : "text-slate-600 dark:text-slate-300"
                 }`}
               >
                 {link.label}

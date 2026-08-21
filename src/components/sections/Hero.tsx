@@ -23,34 +23,38 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-3xl">
             <FadeIn delay={0.2} direction="up">
-              <p className="text-blue-600 font-medium tracking-wide mb-4 flex items-center gap-2">
+              <p className="text-blue-600 dark:text-blue-400 font-medium tracking-wide mb-4 flex items-center gap-2">
                 <span className="w-8 h-[1px] bg-blue-600/50"></span>
                 Hello, I&apos;m
               </p>
             </FadeIn>
             
             <FadeIn delay={0.4} direction="up">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-                <span className="text-gradient-blue">{siteConfig.name || 'Abhishek Shukla'}</span>
+              <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter">
+                <span className="bg-gradient-to-br from-blue-600 to-fuchsia-500 bg-clip-text text-transparent">Abhishek</span>
+                <br />
+                <span className="text-slate-900 dark:text-white">Shukla</span>
               </h1>
             </FadeIn>
             
             <FadeIn delay={0.6} direction="up">
-              <h2 className="text-xl md:text-2xl text-slate-700 font-medium mb-4">
-                {siteConfig.title || 'Customer Experience & AI-Driven Operations Leader'}
-              </h2>
+              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-medium mb-8 flex items-center gap-3">
+                CX & AI Project Leader 
+                <span className="text-slate-300 dark:text-slate-700">|</span> 
+                Author
+              </p>
             </FadeIn>
             
             <FadeIn delay={0.7} direction="up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full glass border border-blue-200/50 text-blue-700 text-sm md:text-base font-semibold shadow-sm">
-                <Trophy className="w-4 h-4 text-blue-500" />
+              <div className="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full font-medium text-sm mb-8 border border-blue-100 dark:border-blue-800/50">
+                <Trophy className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 #1 Rank in India on Customer Loyalty & AI Ethics via Thinkers360
               </div>
             </FadeIn>
             
             <FadeIn delay={0.8} direction="up">
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
-                {siteConfig.hero.description}
+              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-xl">
+                Driving Operational Excellence, 10X GenAI Productivity, and Strategic Career Growth.
               </p>
             </FadeIn>
             

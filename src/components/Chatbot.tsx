@@ -21,7 +21,7 @@ export default function Chatbot() {
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { text: "Thanks for reaching out! Abhishek is currently away, but he will get back to you soon. Feel free to download his resume or check out his books!", isBot: true },
+        { text: "Thanks for reaching out! Abhishek is currently away, but he will get back to you soon. Feel free to explore his CX & AI Consulting Services, download his resume, or check out his books!", isBot: true },
       ]);
     }, 1000);
   };
