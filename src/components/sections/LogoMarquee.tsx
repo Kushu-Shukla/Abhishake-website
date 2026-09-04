@@ -5,10 +5,12 @@ const companiesRow1 = [
   { name: 'IndiGo', url: 'https://www.google.com/s2/favicons?domain=goindigo.in&sz=128' },
   { name: 'Flipkart Travel', url: 'https://www.google.com/s2/favicons?domain=flipkart.com&sz=128' },
   { name: 'Clear Trip', url: 'https://www.google.com/s2/favicons?domain=cleartrip.com&sz=128' },
-  { name: 'Freelancer', url: 'https://www.google.com/s2/favicons?domain=freelancer.com&sz=128' }
+  { name: 'Freelancer', url: 'https://www.google.com/s2/favicons?domain=freelancer.com&sz=128' },
+  { name: 'Jobbers', url: 'https://www.google.com/s2/favicons?domain=jobbers.com&sz=128' }
 ];
 
 const companiesRow2 = [
+  { name: 'Jobbers', url: 'https://www.google.com/s2/favicons?domain=jobbers.com&sz=128' },
   { name: 'Freelancer', url: 'https://www.google.com/s2/favicons?domain=freelancer.com&sz=128' },
   { name: 'Clear Trip', url: 'https://www.google.com/s2/favicons?domain=cleartrip.com&sz=128' },
   { name: 'Flipkart Travel', url: 'https://www.google.com/s2/favicons?domain=flipkart.com&sz=128' },
