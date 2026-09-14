@@ -48,10 +48,8 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-};
-
-
 import LiveVisitors from "@/components/LiveVisitors";
+import RatingWidget from "@/components/RatingWidget";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -82,6 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <CustomCursor />
         {children}
         <LiveVisitors />
+        <RatingWidget />
       </body>
     </html>
   );
