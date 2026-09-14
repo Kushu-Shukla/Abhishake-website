@@ -8,6 +8,7 @@ export default function RatingWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
+  const [feedback, setFeedback] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
@@ -16,7 +17,11 @@ export default function RatingWidget() {
     setTimeout(() => {
       setIsOpen(false);
       // Reset after closing so it's ready if they open it again later
-      setTimeout(() => setSubmitted(false), 500);
+      setTimeout(() => {
+        setSubmitted(false);
+        setRating(0);
+        setFeedback("");
+      }, 500);
     }, 2000);
   };
 
@@ -69,6 +74,13 @@ export default function RatingWidget() {
                     </button>
                   ))}
                 </div>
+
+                <textarea
+                  placeholder="Tell us what you think (optional)"
+                  value={feedback}
+                  onChange={(e) => setFeedback(e.target.value)}
+                  className="w-full text-sm p-3 border border-slate-200 rounded-xl mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-none h-20 text-slate-700 placeholder-slate-400"
+                ></textarea>
 
                 <button 
                   onClick={handleSubmit}
