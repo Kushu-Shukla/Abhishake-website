@@ -48,6 +48,8 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+};
+
 import LiveVisitors from "@/components/LiveVisitors";
 import RatingWidget from "@/components/RatingWidget";
 
