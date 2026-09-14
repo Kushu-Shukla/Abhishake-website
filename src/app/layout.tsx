@@ -52,6 +52,7 @@ export const metadata: Metadata = {
 
 import LiveVisitors from "@/components/LiveVisitors";
 import RatingWidget from "@/components/RatingWidget";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <LiveVisitors />
         <RatingWidget />
+        <Analytics />
       </body>
     </html>
   );
