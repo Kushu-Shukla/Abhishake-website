@@ -51,6 +51,8 @@ export const metadata: Metadata = {
 };
 
 
+import LiveVisitors from "@/components/LiveVisitors";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
@@ -79,6 +81,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-white text-slate-900 transition-colors duration-300">
         <CustomCursor />
         {children}
+        <LiveVisitors />
       </body>
     </html>
   );
