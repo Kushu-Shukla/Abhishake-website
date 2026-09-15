@@ -50,8 +50,6 @@ export const metadata: Metadata = {
   },
 };
 
-import LiveVisitors from "@/components/LiveVisitors";
-import RatingWidget from "@/components/RatingWidget";
 import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -82,8 +80,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-white text-slate-900 transition-colors duration-300">
         <CustomCursor />
         {children}
-        <LiveVisitors />
-        <RatingWidget />
         <Analytics />
       </body>
     </html>
