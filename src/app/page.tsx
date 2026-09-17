@@ -17,8 +17,8 @@ export default function Home() {
         <Expertise />
         <Resume />
         <Books />
-        <Reviews />
         <Collaborate />
+        <Reviews />
         <Contact />
       </main>
       <Footer />
