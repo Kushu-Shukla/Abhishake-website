@@ -74,17 +74,17 @@ export default function Collaborate() {
               {
                 icon: <Briefcase className="w-8 h-8 text-blue-400" />,
                 title: 'Companies & Brands',
-                desc: 'Consulting, fractional leadership, and strategic AI integrations.'
+                desc: 'Consulting, fractional leadership, and strategic integrations.'
               },
               {
                 icon: <Zap className="w-8 h-8 text-yellow-400" />,
                 title: 'Startups',
-                desc: 'Building MVP roadmaps, CX strategies, and operational scaling.'
+                desc: 'Building MVP roadmaps, growth strategies, and operational scaling.'
               },
               {
                 icon: <Globe className="w-8 h-8 text-green-400" />,
                 title: 'Recruiters',
-                desc: 'Open to exciting full-time leadership roles in AI & CX.'
+                desc: 'Open to exciting full-time leadership and executive roles.'
               },
               {
                 icon: <Sparkles className="w-8 h-8 text-purple-400" />,
