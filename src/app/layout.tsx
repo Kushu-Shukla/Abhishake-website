@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CustomCursor from '@/components/CustomCursor';
+import RatingWidget from '@/components/RatingWidget';
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-white text-slate-900 transition-colors duration-300">
         <CustomCursor />
         {children}
+        <RatingWidget />
         <Analytics />
       </body>
     </html>

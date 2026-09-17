@@ -1,18 +1,59 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, X } from 'lucide-react';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 export default function RatingWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
+  const [name, setName] = useState("");
   const [feedback, setFeedback] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [avgRating, setAvgRating] = useState(0);
+  const [totalRatings, setTotalRatings] = useState(0);
 
-  const handleSubmit = () => {
+  useEffect(() => {
+    const fetchRatings = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "ratings"));
+        let sum = 0;
+        let count = 0;
+        querySnapshot.forEach((doc) => {
+          sum += doc.data().rating;
+          count++;
+        });
+        if (count > 0) {
+          setAvgRating(Number((sum / count).toFixed(1)));
+          setTotalRatings(count);
+        }
+      } catch (error) {
+        console.error("Error fetching ratings: ", error);
+      }
+    };
+    fetchRatings();
+  }, [submitted]); // Refetch when a new rating is submitted
+
+  const handleSubmit = async () => {
     if (rating === 0) return;
+    
+    try {
+      // 1. Save to Firebase (non-blocking, we don't await so UI doesn't hang)
+      addDoc(collection(db, "ratings"), {
+        name: name || "Anonymous",
+        rating: rating,
+        feedback: feedback,
+        timestamp: new Date()
+      }).catch(fbError => {
+        console.error('Firebase save error:', fbError);
+      });
+    } catch (error) {
+      console.error('Failed to submit rating', error);
+    }
+
     setSubmitted(true);
     setTimeout(() => {
       setIsOpen(false);
@@ -20,6 +61,7 @@ export default function RatingWidget() {
       setTimeout(() => {
         setSubmitted(false);
         setRating(0);
+        setName("");
         setFeedback("");
       }, 500);
     }, 2000);
@@ -52,8 +94,19 @@ export default function RatingWidget() {
               </div>
             ) : (
               <>
-                <h4 className="font-bold text-slate-800 mb-1">Rate this website</h4>
-                <p className="text-xs text-slate-500 mb-4">How was your experience today?</p>
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-0.5">Rate this website</h4>
+                    {totalRatings > 0 ? (
+                      <p className="text-xs font-medium text-slate-500 flex items-center gap-1">
+                        <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                        {avgRating} ({totalRatings} {totalRatings === 1 ? 'review' : 'reviews'})
+                      </p>
+                    ) : (
+                      <p className="text-xs text-slate-500">How was your experience today?</p>
+                    )}
+                  </div>
+                </div>
                 
                 <div className="flex gap-1 justify-center mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -74,6 +127,14 @@ export default function RatingWidget() {
                     </button>
                   ))}
                 </div>
+
+                <input
+                  type="text"
+                  placeholder="Your Name (optional)"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full text-sm p-3 border border-slate-200 rounded-xl mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-slate-700 placeholder-slate-400"
+                />
 
                 <textarea
                   placeholder="Tell us what you think (optional)"

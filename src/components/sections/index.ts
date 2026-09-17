@@ -10,3 +10,5 @@ export { LogoMarquee } from './LogoMarquee';
 export { CaseStudies } from './CaseStudies';
 export { Gallery } from './Gallery';
 export { Recognitions } from './Recognitions';
+export { default as Collaborate } from './Collaborate';
+export { default as Reviews } from './Reviews';
