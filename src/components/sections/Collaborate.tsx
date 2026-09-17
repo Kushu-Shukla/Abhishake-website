@@ -83,8 +83,8 @@ export default function Collaborate() {
               },
               {
                 icon: <Globe className="w-8 h-8 text-green-400" />,
-                title: 'Recruiters',
-                desc: 'Open to exciting full-time leadership and executive roles.'
+                title: 'Professionals & Teams',
+                desc: 'Providing help, mentorship, and guidance to all levels—from agents to executives.'
               },
               {
                 icon: <Sparkles className="w-8 h-8 text-purple-400" />,
