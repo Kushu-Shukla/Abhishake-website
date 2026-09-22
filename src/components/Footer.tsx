@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/config";
-import { LinkedinIcon, TwitterXIcon, InstagramIcon, YoutubeIcon, Thinkers360Icon } from "@/components/icons/SocialIcons";
+import { LinkedinIcon, TwitterXIcon, InstagramIcon, YoutubeIcon, Thinkers360Icon, TopmateIcon } from "@/components/icons/SocialIcons";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,6 +17,7 @@ export default function Footer() {
     { name: "Instagram", url: siteConfig.social.instagram, icon: InstagramIcon },
     { name: "YouTube", url: siteConfig.social.youtube, icon: YoutubeIcon },
     { name: "Thinkers360", url: siteConfig.social.thinkers360, icon: Thinkers360Icon },
+    { name: "Topmate", url: siteConfig.social.topmate, icon: TopmateIcon },
   ];
 
   return (
@@ -41,7 +42,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Transforming operations through AI, automation & human-centered leadership. Building bridges between technology and human potential.
+              Customer Experience | AI | Business Operations | Leadership | Future of Work
             </p>
             <div className="flex items-center gap-4 mt-2">
               {socialLinks.map((social) => {
@@ -84,8 +85,8 @@ export default function Footer() {
           <div className="md:col-span-3 flex flex-col gap-6">
             <h3 className="text-white font-semibold text-lg">Contact</h3>
             <div className="flex flex-col gap-3 text-sm text-slate-400">
-              <p>Available for consulting, speaking engagements, and full-time leadership roles.</p>
-              <a href="mailto:shukla.abhishek014@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors mt-2">
+              <p>Based in India and available globally through remote consulting, advisory, workshops and project-based engagements.</p>
+              <a href={`mailto:${siteConfig.email}`} className="text-blue-400 hover:text-blue-300 transition-colors mt-2">
                 Say Hello &rarr;
               </a>
             </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { FadeIn } from '@/components/animations';
+
 import SceneLoader from '@/components/three/SceneLoader';
 import { siteConfig } from '@/config';
 import { ChevronDown, Trophy } from 'lucide-react';
@@ -10,9 +11,9 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* 3D Background */}
+      {/* Subtle Professional 3D Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-         <SceneLoader />
+        <SceneLoader />
       </div>
       
       {/* Overlay gradient for readability */}
@@ -25,23 +26,26 @@ export default function Hero() {
             <FadeIn delay={0.2} direction="up">
               <p className="text-blue-600 dark:text-blue-400 font-medium tracking-wide mb-4 flex items-center gap-2">
                 <span className="w-8 h-[1px] bg-blue-600/50"></span>
-                Hello, I&apos;m
+                {siteConfig.hero.greeting}
               </p>
             </FadeIn>
             
             <FadeIn delay={0.4} direction="up">
               <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-bold mb-6 tracking-tight leading-tight">
-                <span className="text-slate-900 dark:text-white">Abhishek</span>
+                <span className="text-slate-900 dark:text-white">{siteConfig.hero.name.split(' ')[0]}</span>
                 <br />
-                <span className="text-blue-600 dark:text-blue-500">Shukla</span>
+                <span className="text-blue-600 dark:text-blue-500">{siteConfig.hero.name.split(' ').slice(1).join(' ')}</span>
               </h1>
             </FadeIn>
             
             <FadeIn delay={0.6} direction="up">
-              <p className="text-xl md:text-2xl font-medium mb-8 text-slate-600 dark:text-slate-300 flex items-center gap-4">
-                <span>CX & AI Project Leader</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span> 
-                <span>Author</span>
+              <p className="text-xl md:text-2xl font-medium mb-8 text-slate-600 dark:text-slate-300">
+                {siteConfig.hero.subtitle.split(' | ').map((part, i, arr) => (
+                  <span key={i}>
+                    <span>{part}</span>
+                    {i < arr.length - 1 && <span className="inline-block mx-4 w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 align-middle"></span>}
+                  </span>
+                ))}
               </p>
             </FadeIn>
             
@@ -53,24 +57,32 @@ export default function Hero() {
             </FadeIn>
             
             <FadeIn delay={0.8} direction="up">
-              <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-10 max-w-xl">
-                Driving Operational Excellence, 10X GenAI Productivity, and Strategic Career Growth.
-              </p>
+              <div className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-10 max-w-xl whitespace-pre-wrap">
+                {siteConfig.hero.description}
+              </div>
             </FadeIn>
             
             <FadeIn delay={1.0} direction="up" className="flex flex-wrap items-center gap-4 mb-8">
               <Link 
-                href="#work" 
+                href={siteConfig.hero.cta1.href} 
                 className="px-8 py-3.5 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-sm"
               >
-                View My Services
+                {siteConfig.hero.cta1.text}
               </Link>
               <Link 
-                href="#contact" 
+                href={siteConfig.hero.cta2.href} 
                 className="px-8 py-3.5 rounded-md border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-300 font-semibold"
               >
-                Let&apos;s Connect
+                {siteConfig.hero.cta2.text}
               </Link>
+              <a
+                href={siteConfig.social.topmate}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 rounded-md bg-gradient-to-r from-[#FF7A59] to-[#FF5E3A] text-white font-semibold hover:scale-105 transition-all shadow-md flex items-center gap-2"
+              >
+                Book a Call
+              </a>
             </FadeIn>
 
             <FadeIn delay={1.2} direction="up" className="flex items-center gap-3">

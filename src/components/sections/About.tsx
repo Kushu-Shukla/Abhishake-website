@@ -34,9 +34,9 @@ export default function About() {
             <FadeIn direction="right">
               <div className="flex items-center gap-4 mb-2">
                 <span className="w-12 h-[1px] bg-blue-600/50"></span>
-                <span className="text-blue-600 text-sm tracking-widest uppercase font-medium">About Me</span>
+                <span className="text-blue-600 text-sm tracking-widest uppercase font-medium">ABOUT ABHISHEK</span>
               </div>
-              <TextReveal text="Building the Future" className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue" />
+              <TextReveal text={siteConfig.about.title || "About Me"} className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue" />
             </FadeIn>
             
             <div className="space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed text-lg">

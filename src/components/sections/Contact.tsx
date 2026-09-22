@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
-import { LinkedinIcon, TwitterXIcon, InstagramIcon, YoutubeIcon, Thinkers360Icon } from '@/components/icons/SocialIcons';
+import { LinkedinIcon, TwitterXIcon, InstagramIcon, YoutubeIcon, Thinkers360Icon, TopmateIcon } from '@/components/icons/SocialIcons';
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
 import Image from 'next/image';
@@ -13,6 +13,7 @@ export function Contact() {
     { name: 'Instagram', url: siteConfig.social.instagram, icon: InstagramIcon },
     { name: 'YouTube', url: siteConfig.social.youtube, icon: YoutubeIcon },
     { name: 'Thinkers360', url: siteConfig.social.thinkers360, icon: Thinkers360Icon },
+    { name: 'Topmate', url: siteConfig.social.topmate, icon: TopmateIcon },
   ];
 
   return (
@@ -27,7 +28,7 @@ export function Contact() {
             GET IN TOUCH
           </span>
           <h2 className="text-5xl md:text-7xl font-bold mb-6 text-gradient-blue">
-            Let&apos;s Connect
+            {siteConfig.contact.title || "Let's Connect"}
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mb-12 mx-auto">
             {siteConfig.contact.subtitle}

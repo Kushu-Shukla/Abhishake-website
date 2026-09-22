@@ -5,14 +5,14 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-const NODE_COUNT = 150;
-const CONNECTION_DISTANCE = 1.5;
+const NODE_COUNT = 250;
+const CONNECTION_DISTANCE = 1.8;
 
 const colorPalette = [
-  new THREE.Color('#ec4899'), // Pink
-  new THREE.Color('#8b5cf6'), // Purple
-  new THREE.Color('#06b6d4'), // Cyan
-  new THREE.Color('#3b82f6'), // Blue
+  new THREE.Color('#3b82f6'), // Blue 500
+  new THREE.Color('#60a5fa'), // Blue 400
+  new THREE.Color('#94a3b8'), // Slate 400
+  new THREE.Color('#cbd5e1'), // Slate 300
 ];
 
 function Network() {
@@ -52,8 +52,8 @@ function Network() {
       col[i * 3 + 1] = color.g;
       col[i * 3 + 2] = color.b;
 
-      // Sizes (larger)
-      siz[i] = 0.03 + Math.random() * 0.08;
+      // Sizes (smaller for professional look)
+      siz[i] = 0.01 + Math.random() * 0.03;
     }
 
     // Connections are generated dynamically in useFrame for interactivity
@@ -159,7 +159,7 @@ function Network() {
             usage={THREE.DynamicDrawUsage}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#8b5cf6" transparent opacity={0.25} />
+        <lineBasicMaterial color="#94a3b8" transparent opacity={0.15} />
       </lineSegments>
     </group>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Calendar } from "lucide-react";
 import { siteConfig } from "@/config";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -120,10 +120,19 @@ export default function Navigation() {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
           <a
+            href={siteConfig.social.topmate}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#FF7A59] to-[#FF5E3A] text-white rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,122,89,0.4)]"
+          >
+            <Calendar className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+            Book a Call
+          </a>
+          <a
             href={siteConfig.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+            className="group relative flex items-center gap-2 px-5 py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-sm hover:shadow-md"
           >
             <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
             Resume

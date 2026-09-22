@@ -13,7 +13,7 @@ export function Expertise() {
           <FadeIn>
             <div>
               <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
-                EXPERTISE & CERTIFICATIONS
+                {siteConfig.expertise.title.toUpperCase() || 'EXPERTISE & CERTIFICATIONS'}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue">
                 {siteConfig.expertise.title || 'Skills & Certifications'}
@@ -47,33 +47,35 @@ export function Expertise() {
           </div>
         </div>
 
-        <FadeIn delay={0.4}>
-          <div>
-            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-8">Professional Certifications</h3>
-            
-            {/* Featured Image Certificates */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              {siteConfig.expertise.certifications
-                .filter((cert: any) => cert.image)
-                .map((cert: any, index: number) => (
-                <div 
-                  key={`img-${index}`}
-                  className="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-950 aspect-[4/3]"
-                >
-                  <Image 
-                    src={cert.image} 
-                    alt={cert.name} 
-                    fill 
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <span className="text-white font-bold text-sm">{cert.name}</span>
+        {siteConfig.expertise.certifications && siteConfig.expertise.certifications.length > 0 && (
+          <FadeIn delay={0.4}>
+            <div>
+              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-8">Professional Certifications</h3>
+              
+              {/* Featured Image Certificates */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {siteConfig.expertise.certifications
+                  .filter((cert: any) => cert.image)
+                  .map((cert: any, index: number) => (
+                  <div 
+                    key={`img-${index}`}
+                    className="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-950 aspect-[4/3]"
+                  >
+                    <Image 
+                      src={cert.image} 
+                      alt={cert.name} 
+                      fill 
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <span className="text-white font-bold text-sm">{cert.name}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        )}
       </div>
     </section>
   );

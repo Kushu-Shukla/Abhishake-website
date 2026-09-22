@@ -20,7 +20,7 @@ export default function Books() {
         <FadeIn>
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase block mb-4">
-              Featured Publication
+              {siteConfig.books.title.toUpperCase()}
             </span>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
               {siteConfig.books.title}
@@ -118,19 +118,11 @@ export default function Books() {
                   href={siteConfig.books.items[0].link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF9900] text-slate-900 font-black hover:bg-[#e68a00] hover:scale-105 transition-all shadow-lg shadow-orange-500/20"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-blue-600 text-white font-black hover:bg-blue-700 hover:scale-105 transition-all shadow-lg shadow-blue-500/20"
                 >
-                  Buy on Amazon
+                  Read My Insights
                   <ExternalLink className="w-5 h-5" />
                 </a>
-                
-                <button 
-                  onClick={() => alert("Free Chapter 1 download will be available soon!")}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border-2 border-slate-200 text-slate-700 font-bold hover:border-blue-500 hover:text-blue-600 hover:scale-105 transition-all shadow-sm"
-                >
-                  <Download className="w-5 h-5" />
-                  Read Sample Chapter
-                </button>
               </div>
 
               {/* Reviews Mini-Grid */}

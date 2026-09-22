@@ -3,7 +3,7 @@
 import { useState, useRef, MouseEvent, FormEvent } from 'react';
 import { siteConfig } from '@/config';
 import { FadeIn } from '@/components/animations';
-import { BookOpen, Award, Cpu, Users, ArrowUpRight, LucideIcon, X } from 'lucide-react';
+import { BookOpen, Award, Cpu, Users, ArrowUpRight, LucideIcon, X, Settings, BarChart, Compass, Mic, UserCheck } from 'lucide-react';
 import Image from 'next/image';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -11,6 +11,11 @@ const iconMap: Record<string, LucideIcon> = {
   Award,
   Cpu,
   Users,
+  Settings,
+  BarChart,
+  Compass,
+  Mic,
+  UserCheck
 };
 
 function WorkCard({ item, index, onClick }: { item: typeof siteConfig.work.items[number]; index: number; onClick: () => void }) {
@@ -115,9 +120,9 @@ export function Work() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between mb-10 md:mb-24 gap-12">
           <FadeIn direction="right" className="md:w-2/3 text-left">
-            <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">SELECTED WORK</p>
+            <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">{siteConfig.work.title.toUpperCase()}</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-blue mb-6">
-              Selected Work
+              {siteConfig.work.title}
             </h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-2xl text-lg">
               {siteConfig.work?.subtitle || "Showcasing some of my recent projects and collaborations."}

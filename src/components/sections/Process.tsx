@@ -17,9 +17,9 @@ export function Process() {
           {/* Text Column */}
           <FadeIn direction="right">
             <div className="text-left">
-              <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">MY PROCESS</p>
+              <p className="text-blue-600 text-sm tracking-widest uppercase mb-4 font-semibold">{siteConfig.process?.title.toUpperCase() || 'MY PROCESS'}</p>
               <h2 className="text-4xl md:text-5xl font-bold text-gradient-blue mb-6">
-                How I Work
+                {siteConfig.process?.title || 'How I Work'}
               </h2>
               <p className="text-slate-600 dark:text-slate-300 text-lg">
                 {siteConfig.process?.subtitle || "My structured approach to solving problems and delivering high-quality solutions."}
@@ -68,12 +68,12 @@ export function Process() {
                     >
                       <div className="glass rounded-2xl p-8 hover:border-blue-500/30 transition-colors duration-300 relative overflow-hidden group">
                         {/* Background Number */}
-                        <div className={`absolute ${isEven ? '-right-4' : '-left-4'} -bottom-8 text-[120px] font-bold text-slate-100 group-hover:text-slate-200 transition-colors duration-500 pointer-events-none select-none`}>
+                        <div className={`absolute ${isEven ? '-right-4' : '-left-4'} -bottom-8 text-[120px] font-bold text-slate-100 dark:text-slate-800/50 group-hover:text-slate-200 dark:group-hover:text-slate-800 transition-colors duration-500 pointer-events-none select-none z-0`}>
                           0{index + 1}
                         </div>
                         
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-4">
-                          <span className="text-blue-600 font-mono text-sm border border-blue-600/30 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
+                        <h3 className="relative z-10 text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-4">
+                          <span className="text-blue-600 font-mono text-sm border border-blue-600/30 bg-white dark:bg-slate-900 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
                             {index + 1}
                           </span>
                           {step.title}
