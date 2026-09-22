@@ -16,13 +16,16 @@ export default function Hero() {
         <SceneLoader />
       </div>
       
-      {/* Overlay gradient for readability */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/40 via-transparent to-white/90 dark:from-slate-950/80 dark:to-slate-950 pointer-events-none" />
+      {/* Stronger overlay gradient for readability */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent dark:from-slate-950/90 dark:via-slate-950/50 dark:to-transparent pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-white/50 to-white dark:via-slate-950/50 dark:to-slate-950 pointer-events-none" />
 
       {/* Main Content */}
       <div className="container relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl relative">
+            {/* Soft glow behind text for maximum legibility */}
+            <div className="absolute -inset-10 bg-white/40 dark:bg-slate-950/40 blur-3xl rounded-full z-[-1] pointer-events-none"></div>
             <FadeIn delay={0.2} direction="up">
               <p className="text-blue-600 dark:text-blue-400 font-medium tracking-wide mb-4 flex items-center gap-2">
                 <span className="w-8 h-[1px] bg-blue-600/50"></span>
@@ -39,11 +42,11 @@ export default function Hero() {
             </FadeIn>
             
             <FadeIn delay={0.6} direction="up">
-              <p className="text-xl md:text-2xl font-medium mb-8 text-slate-600 dark:text-slate-300">
+              <p className="text-xl md:text-2xl font-semibold mb-8 text-slate-800 dark:text-slate-100">
                 {siteConfig.hero.subtitle.split(' | ').map((part, i, arr) => (
                   <span key={i}>
                     <span>{part}</span>
-                    {i < arr.length - 1 && <span className="inline-block mx-4 w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 align-middle"></span>}
+                    {i < arr.length - 1 && <span className="inline-block mx-4 w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600 align-middle"></span>}
                   </span>
                 ))}
               </p>
@@ -57,7 +60,7 @@ export default function Hero() {
             </FadeIn>
             
             <FadeIn delay={0.8} direction="up">
-              <div className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-10 max-w-xl whitespace-pre-wrap">
+              <div className="text-lg text-slate-800 dark:text-slate-200 font-medium leading-relaxed mb-10 max-w-xl whitespace-pre-wrap">
                 {siteConfig.hero.description}
               </div>
             </FadeIn>
