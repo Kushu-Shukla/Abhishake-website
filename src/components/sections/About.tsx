@@ -1,88 +1,44 @@
-'use client';
-
-import { FadeIn, TextReveal } from '@/components/animations';
-import { siteConfig } from '@/config';
-
-import Image from 'next/image';
+import { siteConfig } from "@/config";
+import Link from "next/link";
+import { Download } from "lucide-react";
 
 export default function About() {
-  const paragraphs = siteConfig.about?.paragraphs || [
-    "I'm a passionate leader at the intersection of customer experience and artificial intelligence.",
-    "With over a decade of experience in transforming operations, I help organizations build scalable, empathetic, and highly efficient customer journeys."
-  ];
-
-  const philosophy = siteConfig.about?.philosophy || "Empathy driven by data, scaled through AI.";
-
-  const stats = siteConfig.about?.stats || [
-    { value: "10+", label: "Years Experience" },
-    { value: "50+", label: "Projects Delivered" },
-    { value: "5M+", label: "Users Impacted" },
-    { value: "3x", label: "Efficiency Growth" },
-  ];
-
   return (
-    <section id="about" className="relative py-12 md:py-16 md:py-32 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[128px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[128px] translate-x-1/2 pointer-events-none" />
-      
-      <div className="container max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-10">
-          
-          {/* Left Column - Bio */}
-          <div className="space-y-8">
-            <FadeIn direction="right">
-              <div className="flex items-center gap-4 mb-2">
-                <span className="w-12 h-[1px] bg-blue-600/50"></span>
-                <span className="text-blue-600 text-sm tracking-widest uppercase font-medium">ABOUT ABHISHEK</span>
-              </div>
-              <TextReveal text={siteConfig.about.title || "About Me"} className="text-4xl md:text-5xl font-bold mb-6 text-gradient-blue" />
-            </FadeIn>
-            
-            <div className="space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-              {paragraphs.map((paragraph: string, idx: number) => (
-                <FadeIn key={idx} delay={0.2 + (idx * 0.1)} direction="right">
-                  <p>{paragraph}</p>
-                </FadeIn>
-              ))}
-            </div>
-            
-            <FadeIn delay={0.5} direction="right">
-              <div className="glass p-8 rounded-2xl border-l-4 border-l-blue-500 mt-8 relative overflow-hidden group hover:border-l-blue-400 transition-colors duration-500">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <p className="italic text-blue-600 text-xl font-medium relative z-10">
-                  &quot;{philosophy}&quot;
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-          
-          {/* Right Column - Image */}
-          <div className="relative">
-            <FadeIn delay={0.4} direction="left">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-slate-200">
-                <Image src={siteConfig.profileImage} alt="Abhishek Shukla Author" fill className="object-cover hover:scale-105 transition-transform duration-700" />
-              </div>
-            </FadeIn>
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <h1 className="text-4xl md:text-5xl font-light text-brand-navy mb-12 text-center">
+          {siteConfig.about.heading}
+        </h1>
+        
+        <div className="mb-12 flex flex-wrap justify-center gap-4">
+          {siteConfig.about.roles.map((role, i) => (
+            <span key={i} className="text-sm font-semibold tracking-widest text-brand-gold uppercase px-4 py-2 border border-brand-gold/30">
+              {role}
+            </span>
+          ))}
+        </div>
+
+        <div className="prose prose-lg max-w-none text-brand-gray-dark mb-16 text-center">
+          <p className="text-xl leading-relaxed">
+            {siteConfig.about.copy}
+          </p>
+        </div>
+
+        <div className="bg-brand-offwhite p-10 border border-brand-gray/50 mb-16 text-center">
+          <h3 className="text-xl font-medium text-brand-navy mb-8">Core Focus Areas</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {siteConfig.about.focus.map((focus, i) => (
+              <span key={i} className="bg-white border border-brand-gray px-4 py-2 text-sm text-brand-navy rounded-full">
+                {focus}
+              </span>
+            ))}
           </div>
         </div>
-        
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat: { value: string; label: string }, idx: number) => (
-            <FadeIn key={idx} delay={0.2 + (idx * 0.1)} direction="up" className="h-full">
-              <div className="glass h-full p-8 rounded-2xl flex flex-col justify-center items-center text-center border border-transparent hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group bg-slate-50 dark:bg-slate-900">
-                <div className="text-4xl lg:text-5xl font-bold mb-3">
-                  <span className="text-gradient-blue group-hover:text-blue-500 transition-all duration-500">
-                    {stat.value}
-                  </span>
-                </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300 font-medium tracking-wide uppercase">
-                  {stat.label}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+
+        <div className="text-center">
+          <Link href={siteConfig.about.resumeUrl} target="_blank" className="inline-flex items-center px-8 py-4 bg-brand-navy text-white text-center rounded-none font-medium hover:bg-brand-navy/90 transition-colors">
+            <Download className="mr-2 w-5 h-5" /> Download Resume
+          </Link>
         </div>
       </div>
     </section>
