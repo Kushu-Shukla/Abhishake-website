@@ -82,6 +82,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center">
           <Link
             href="/#contact"
+            onClick={(e) => handleLinkClick(e, "/#contact")}
             className="px-6 py-3 bg-brand-navy text-white text-sm font-medium rounded-none hover:bg-brand-navy/90 transition-colors"
           >
             Work With Me
@@ -122,7 +123,7 @@ export default function Navigation() {
               <div className="w-full h-px bg-brand-gray my-4" />
               <Link
                 href="/#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleLinkClick(e, "/#contact")}
                 className="inline-flex items-center justify-center px-6 py-4 bg-brand-navy text-white font-medium rounded-none uppercase tracking-wide"
               >
                 Work With Me
