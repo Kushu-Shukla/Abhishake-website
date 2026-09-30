@@ -1,10 +1,15 @@
 import { siteConfig } from "@/config";
 import Image from "next/image";
+import { SceneLoader } from "../three";
 
 export function Hero() {
   return (
-    <section id="home" className="pt-32 pb-16 px-6 bg-[#0f172a] text-white">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <section id="home" className="relative pt-32 pb-16 px-6 bg-[#0f172a] text-white overflow-hidden min-h-[90vh] flex items-center">
+      <div className="absolute inset-0 z-0 opacity-40">
+        <SceneLoader />
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-white leading-tight">
             {siteConfig.hero.headline}
