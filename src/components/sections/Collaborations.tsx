@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config";
+import Link from "next/link";
 
 export function Collaborations() {
   const { headline, types } = siteConfig.collaborations;
@@ -24,9 +25,9 @@ export function Collaborations() {
              <a href="#professionals" className="px-6 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl font-semibold transition">
                Explore Professional Support
              </a>
-             <a href="mailto:abhishekshukla16102000@gmail.com" className="px-6 py-4 bg-[#0284c7] hover:bg-sky-600 border border-sky-500 rounded-xl font-semibold transition text-white">
+             <Link href="?request=Collaboration+Request" scroll={false} className="px-6 py-4 bg-[#0284c7] hover:bg-sky-600 border border-sky-500 rounded-xl font-semibold transition text-white">
                Submit Collaboration Request
-             </a>
+             </Link>
              <a href="#resources" className="px-6 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl font-semibold transition">
                Explore Frameworks & Guides
              </a>

@@ -158,7 +158,7 @@ export const siteConfig = {
     certifications: [
       { name: 'The AI-Driven Project Manager', image: '/certificates/linkedin-learning.jpg' },
       { name: 'Agile Project Management', image: '/certificates/ibm-skillsbuild.jpg' },
-      { name: 'Customer Experience Leadership', image: '/certificates/tcs-ion.jpg' },
+      { name: 'Customer Experience Leadership', image: '/certificates/linkedin-cx.png' },
       { name: 'Generative AI Certified', image: '/certificates/linkedin-learning.jpg' },
       { name: 'Lean Six Sigma White Belt', image: '/certificates/lean-six-sigma.jpg' },
       { name: 'Customer Experience for Business Success', image: '/certificates/hp-life.jpg' }
@@ -166,7 +166,7 @@ export const siteConfig = {
     badges: [
       { name: 'Top Voice: Agile', image: '/certificates/thinkers360-agile.png' },
       { name: 'Top Voice: Leadership', image: '/certificates/thinkers360-leadership.png' },
-      { name: 'Top Voice: Lean Startup', image: '/certificates/thinkers360-lean-startup.png' },
+
       { name: 'Lean Six Sigma', image: '/certificates/lean-six-sigma.jpg' }
     ]
   },

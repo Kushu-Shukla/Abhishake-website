@@ -27,6 +27,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <CredibilityStrip />
+        <Credentials />
         <AudiencePathways />
         <WhyItMatters />
         <OrganizationSolutions />
@@ -40,7 +41,6 @@ export default function Home() {
         <ResourceHub />
         <PublishedBook />
         <Insights />
-        <Credentials />
         <Collaborations />
       </main>
       <Footer />

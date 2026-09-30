@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config";
+import Link from "next/link";
 
 export function OrganizationSolutions() {
   const { headline, premise, services, ctaHook, ctaButton } = siteConfig.orgServices;
@@ -11,17 +12,22 @@ export function OrganizationSolutions() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-xl border border-slate-200">
-              <h3 className="text-xl font-bold mb-4 text-[#0f172a]">{service.title}</h3>
+            <Link 
+              key={idx} 
+              href={`?request=${encodeURIComponent(service.title)}`}
+              scroll={false}
+              className="bg-white p-8 rounded-xl border border-slate-200 hover:border-[#0284c7] hover:shadow-lg transition cursor-pointer block group"
+            >
+              <h3 className="text-xl font-bold mb-4 text-[#0f172a] group-hover:text-[#0284c7] transition-colors">{service.title}</h3>
               <ul className="space-y-3">
                 {service.items.map((item, i) => (
                   <li key={i} className="flex items-start text-sm text-slate-600">
-                    <span className="text-[#0284c7] mr-2">•</span>
+                    <span className="text-[#0284c7] mr-2">&bull;</span>
                     {item}
                   </li>
                 ))}
               </ul>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="bg-[#0f172a] text-white p-10 rounded-2xl text-center border border-slate-800">
