@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import CustomCursor from '@/components/CustomCursor';
-import RatingWidget from '@/components/RatingWidget';
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -52,8 +50,9 @@ export const metadata: Metadata = {
 };
 
 import { Analytics } from "@vercel/analytics/react";
+import ScrollToTop from "@/components/ScrollToTop";
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
@@ -79,9 +78,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-900 transition-colors duration-300">
-        <CustomCursor />
         {children}
-        <RatingWidget />
+        <ScrollToTop />
         <Analytics />
       </body>
     </html>

@@ -1,0 +1,36 @@
+import { siteConfig } from "@/config";
+
+export function OrganizationSolutions() {
+  const { headline, premise, services, ctaHook, ctaButton } = siteConfig.orgServices;
+  return (
+    <section id="organizations" className="py-20 px-6 bg-slate-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0f172a]">{headline}</h2>
+          <p className="text-lg text-slate-600">{premise}</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {services.map((service, idx) => (
+            <div key={idx} className="bg-white p-8 rounded-xl border border-slate-200">
+              <h3 className="text-xl font-bold mb-4 text-[#0f172a]">{service.title}</h3>
+              <ul className="space-y-3">
+                {service.items.map((item, i) => (
+                  <li key={i} className="flex items-start text-sm text-slate-600">
+                    <span className="text-[#0284c7] mr-2">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="bg-[#0f172a] text-white p-10 rounded-2xl text-center border border-slate-800">
+          <p className="text-xl font-medium mb-6">{ctaHook}</p>
+          <a href="#contact" className="inline-block px-8 py-4 bg-[#0284c7] text-white rounded-full font-semibold hover:bg-sky-600 transition">
+            {ctaButton}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

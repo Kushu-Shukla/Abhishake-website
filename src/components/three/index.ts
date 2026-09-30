@@ -1,1 +1,0 @@
-export { default as SceneLoader } from './SceneLoader';
