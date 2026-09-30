@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Download, Calendar } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,24 +9,19 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // Update scrolled state
       setIsScrolled(currentScrollY > 50);
 
-      // Hide/Show logic
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false); // scrolling down
       } else {
         setIsVisible(true); // scrolling up
       }
-      
       setLastScrollY(currentScrollY);
     };
 
@@ -34,42 +29,20 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  useEffect(() => {
-    // Intersection Observer for active sections
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const sections = siteConfig.navLinks.map((link) =>
-      document.getElementById(link.href.replace("#", ""))
-    );
-    
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, []);
-
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
+    if (href.startsWith("/#")) {
       e.preventDefault();
-      const targetId = href.replace("#", "");
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      const targetId = href.replace("/#", "");
+      if (window.location.pathname === '/') {
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+      } else {
+          window.location.href = href;
       }
+      setIsMobileMenuOpen(false);
+    } else {
       setIsMobileMenuOpen(false);
     }
   };
@@ -81,67 +54,44 @@ export default function Navigation() {
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled 
-          ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-[0_4px_30px_rgba(0,212,255,0.05)]" 
+          ? "bg-white/95 backdrop-blur-md border-b border-brand-gray" 
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-6 h-24 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2 z-50">
-          <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:border-blue-500/50 transition-colors">
-            <span className="text-lg font-bold bg-gradient-to-br from-blue-600 to-blue-500 bg-clip-text text-transparent">
-              AS
-            </span>
-          </div>
-          <span className="text-slate-900 dark:text-white font-semibold hidden sm:block tracking-wide group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            Abhishek Shukla
-          </span>
+        <Link href="/" className="z-50 text-xl font-medium tracking-wide text-brand-navy">
+          i<span className="font-semibold">AbhishekShukla</span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {siteConfig.navLinks.map((link) => {
-            const isActive = activeSection === link.href.replace("#", "");
-            return (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                  isActive ? "text-blue-600 dark:text-blue-400" : "text-slate-600 dark:text-slate-300"
-                }`}
-              >
-                {link.label}
-              </a>
-            );
-          })}
+        <div className="hidden md:flex items-center space-x-8">
+          {siteConfig.navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              className="text-sm font-medium tracking-wide text-brand-navy/70 hover:text-brand-navy transition-colors uppercase"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
-        {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href={siteConfig.social.topmate}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#FF7A59] to-[#FF5E3A] text-white rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,122,89,0.4)]"
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center">
+          <Link
+            href="/#contact"
+            onClick={(e) => handleLinkClick(e, "/#contact")}
+            className="px-6 py-3 bg-brand-navy text-white text-sm font-medium rounded-none hover:bg-brand-navy/90 transition-colors"
           >
-            <Calendar className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-            Book a Call
-          </a>
-          <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative flex items-center gap-2 px-5 py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-sm hover:shadow-md"
-          >
-            <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-            Resume
-          </a>
+            Work With Me
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:text-white z-50 relative"
+          className="md:hidden p-2 text-brand-navy z-50 relative"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -157,34 +107,27 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-20 bg-white dark:bg-slate-950/95 backdrop-blur-3xl z-40 md:hidden flex flex-col p-6 border-t border-slate-200"
+            className="fixed inset-0 top-24 bg-white z-40 md:hidden flex flex-col p-6 border-t border-brand-gray"
           >
-            <div className="flex flex-col gap-6 mt-8">
-              {siteConfig.navLinks.map((link) => {
-                const isActive = activeSection === link.href.replace("#", "");
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className={`text-2xl font-bold tracking-tight ${
-                      isActive ? "text-blue-600" : "text-slate-900 dark:text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                );
-              })}
-              <div className="w-full h-px bg-slate-200 dark:bg-slate-800 my-4" />
-              <a
-                href={siteConfig.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-bold text-lg"
+            <div className="flex flex-col space-y-6 mt-4">
+              {siteConfig.navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className="text-2xl font-light text-brand-navy tracking-wide uppercase"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="w-full h-px bg-brand-gray my-4" />
+              <Link
+                href="/#contact"
+                onClick={(e) => handleLinkClick(e, "/#contact")}
+                className="inline-flex items-center justify-center px-6 py-4 bg-brand-navy text-white font-medium rounded-none uppercase tracking-wide"
               >
-                <Download className="w-5 h-5" />
-                Download Resume
-              </a>
+                Work With Me
+              </Link>
             </div>
           </motion.div>
         )}

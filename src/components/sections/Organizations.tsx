@@ -17,7 +17,8 @@ export default function Organizations() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {siteConfig.organizations.services.map((service, index) => {
-            const Icon = Icons[service.icon as keyof typeof Icons] as React.ElementType || Icons.Circle;
+            const IconName = service.icon as keyof typeof Icons;
+            const Icon = (Icons[IconName] as any) || Icons.Circle;
             return (
               <div key={index} className="p-8 bg-white border border-brand-gray/50 hover:border-brand-gold/30 transition-colors shadow-sm">
                 <Icon className="w-8 h-8 text-brand-gold mb-6" />
