@@ -8,7 +8,7 @@ export function WhyItMatters() {
         
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3 relative h-[400px] rounded-2xl overflow-hidden shadow-xl shrink-0">
-            <Image src="/profile_pinstripe.png" alt="Abhishek Shukla" fill className="object-cover" />
+            <Image src="/profile_pinstripe.png" alt="Abhishek Shukla" fill className="object-cover object-top" />
           </div>
           
           <div className="flex-1 space-y-12">

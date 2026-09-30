@@ -24,7 +24,7 @@ export function LeadershipArchitecture() {
           </div>
         </div>
         <div className="w-full md:w-5/12 relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
-          <Image src="/profile_grey_suit.png" alt="Abhishek Shukla - Leadership" fill className="object-cover" />
+          <Image src="/profile_grey_suit.png" alt="Abhishek Shukla - Leadership" fill className="object-cover object-top" />
         </div>
       </div>
     </section>

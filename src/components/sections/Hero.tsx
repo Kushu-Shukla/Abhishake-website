@@ -32,7 +32,7 @@ export function Hero() {
             src={siteConfig.profileImage} 
             alt={siteConfig.name} 
             fill 
-            className="object-cover rounded-full border-4 border-[#1e293b]" 
+            className="object-cover object-top rounded-full border-4 border-[#1e293b]" 
             priority
           />
         </div>

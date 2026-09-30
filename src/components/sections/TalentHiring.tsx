@@ -10,7 +10,7 @@ export function TalentHiring() {
         
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           <div className="w-full lg:w-1/3 relative h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-slate-700 shrink-0">
-            <Image src="/profile_navy_jacket.png" alt="Abhishek Shukla - Hiring Support" fill className="object-cover" />
+            <Image src="/profile_navy_jacket.png" alt="Abhishek Shukla - Hiring Support" fill className="object-cover object-top" />
           </div>
           
           <div className="flex-1 space-y-12">

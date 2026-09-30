@@ -166,8 +166,7 @@ export const siteConfig = {
     badges: [
       { name: 'Top Voice: Agile', image: '/certificates/thinkers360-agile.png' },
       { name: 'Top Voice: Leadership', image: '/certificates/thinkers360-leadership.png' },
-      { name: 'Top 50 Thought Leader: AI Ethics', image: '/certificates/thinkers360-ai-ethics.png' },
-      { name: 'Lean Six Sigma', image: '/certificates/lean-six-sigma.jpg' }
+      { name: 'Top 50 Thought Leader: AI Ethics', image: '/certificates/thinkers360-ai-ethics.png' }
     ]
   },
   book: {
