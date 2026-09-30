@@ -6,7 +6,7 @@ export const siteConfig = {
   location: 'Delhi, India (Global Remote)',
   domain: 'iAbhishekShukla.com',
   resumeUrl: '/Abhishek_Shukla_Resume.pdf',
-  profileImage: '/profile_main.png',
+  profileImage: '/profile_navy_chin.png',
   social: {
     linkedin: 'https://linkedin.com/in/abhishek-shukla-cx',
     twitter: 'https://x.com/Abhishek1610200',
@@ -166,7 +166,7 @@ export const siteConfig = {
     badges: [
       { name: 'Top Voice: Agile', image: '/certificates/thinkers360-agile.png' },
       { name: 'Top Voice: Leadership', image: '/certificates/thinkers360-leadership.png' },
-
+      { name: 'Top 50 Thought Leader: AI Ethics', image: '/certificates/thinkers360-ai-ethics.png' },
       { name: 'Lean Six Sigma', image: '/certificates/lean-six-sigma.jpg' }
     ]
   },
