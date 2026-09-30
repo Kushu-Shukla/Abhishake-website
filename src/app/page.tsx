@@ -1,44 +1,24 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { 
-  Hero, 
-  CredibilityBar, 
-  BusinessProblem, 
-  Organizations, 
-  Professionals, 
-  Expertise, 
-  HowIWork, 
-  SelectedWork, 
-  AiCx, 
-  Leadership, 
-  ProfessionalRecognition, 
-  Author, 
-  Insights, 
-  WhyAbhishek, 
-  WorkWithAbhishek, 
-  Contact 
-} from "@/components/sections";
+import { Hero, About, Work, Process, Expertise, Resume, Books, Contact, LogoMarquee, CaseStudies, Recognitions, Collaborate, Reviews } from "@/components/sections";
 
 export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="flex-1 bg-white">
+      <main className="flex-1">
         <Hero />
-        <CredibilityBar />
-        <BusinessProblem />
-        <Organizations />
-        <Professionals />
+        <LogoMarquee />
+        <About />
+        <Work />
+        <CaseStudies />
+        <Recognitions />
+        <Process />
         <Expertise />
-        <HowIWork />
-        <SelectedWork />
-        <AiCx />
-        <Leadership />
-        <ProfessionalRecognition />
-        <Author />
-        <Insights />
-        <WhyAbhishek />
-        <WorkWithAbhishek />
+        <Resume />
+        <Books />
+        <Collaborate />
+        <Reviews />
         <Contact />
       </main>
       <Footer />

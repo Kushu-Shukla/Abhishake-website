@@ -1,284 +1,182 @@
 export const siteConfig = {
   name: 'Abhishek Shukla',
-  title: 'CX & AI Leader | Consultant | Project Leader | Author',
-  tagline: 'Customer Experience • AI • Operations • Leadership',
+  title: 'CX & AI Leader | Consultant | Author',
+  tagline: 'Helping organizations improve customer experience, transform operations and adopt AI, while helping professionals prepare for the future of work.',
+  bio: 'I work at the intersection of Customer Experience, AI, Business Operations and Leadership, turning real-world challenges into practical strategies and solutions.',
   email: 'abhishekshukla16102000@gmail.com',
   phone: '8860220070',
   location: 'Delhi, India (Available Globally)',
-  domain: 'iAbhishekShukla.com',
+  domain: 'abhishekshukla.com',
   resumeUrl: '/Abhishek_Shukla_Resume.pdf',
   profileImage: '/profile_main.png',
   social: {
     linkedin: 'https://linkedin.com/in/abhishek-shukla-cx',
+    twitter: 'https://x.com/Abhishek1610200',
+    instagram: 'https://www.instagram.com/cxai.leader?igsh=ZzUzMDNod3l3cTRq',
+    youtube: 'https://www.youtube.com/@CXAILeader',
     thinkers360: 'https://www.thinkers360.com/tl/AbhishekShuklaCXandAILeader',
+    freelancer: 'https://www.freelancer.com/u/abhishekshukla',
+    jobbers: 'https://www.jobbers.com/abhishekshukla',
+    topmate: 'https://topmate.io/abhishek_shukla1610',
   },
-  navLinks: [
-    { label: 'Home', href: '/' },
-    { label: 'Organizations', href: '/#organizations' },
-    { label: 'Professionals', href: '/#professionals' },
-    { label: 'Expertise', href: '/#expertise' },
-    { label: 'Insights', href: '/#insights' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/#contact' },
-  ],
   hero: {
-    eyebrow: 'CX & AI LEADER',
-    headline: 'Better Experiences. Smarter Operations. AI That Works.',
-    description: 'I help organizations improve customer experience, operational performance and workplace productivity by bringing together AI, data, process thinking and human-centered leadership.',
-    subtext: 'Customer Experience • Artificial Intelligence • Operations • Leadership',
-    cta1: { text: 'Work With Me', href: '/#contact' },
-    cta2: { text: 'Explore My Expertise', href: '/#expertise' },
+    greeting: 'Hello, I\'m',
+    name: 'Abhishek Shukla',
+    subtitle: 'CX & AI Leader | Consultant | Author',
+    description: 'Helping organizations improve customer experience, transform operations and adopt AI, while helping professionals prepare for the future of work.\n\nI work at the intersection of Customer Experience, AI, Business Operations and Leadership, turning real-world challenges into practical strategies and solutions.',
+    cta1: { text: 'Work With Me', href: '#contact' },
+    cta2: { text: 'Explore Services', href: '#work' },
   },
-  credibility: [
-    '7+ Years Experience',
-    'CX & AI Focus',
-    'Global / Remote Consulting',
-    'Thinkers360 Recognition',
-    'Author'
-  ],
-  businessProblem: {
-    heading: 'Technology Is Changing Work. The Real Challenge Is Knowing What to Change.',
-    copy1: 'Organizations do not need more technology for the sake of technology. They need better ways to understand their customers, improve their processes, support their people and make smarter decisions.',
-    copy2: 'My work focuses on identifying the real problem first — then determining where CX, AI, data, process improvement or leadership can create practical value.',
-    steps: ['Problem', 'Diagnose', 'Strategy', 'Implementation', 'Improvement']
+  about: {
+    title: 'About Abhishek',
+    paragraphs: [
+      'THE FUTURE OF WORK IS HUMAN + AI',
+      'AI is changing how businesses operate, how customers interact with companies and how professionals build their careers. I help organizations and professionals understand these changes and turn them into practical opportunities.',
+      'I am Abhishek Shukla, a CX & AI leader, consultant and author focused on customer experience, artificial intelligence, business operations and human leadership.',
+      'My goal is simple: Help organizations work better, leaders lead better, and professionals prepare for what comes next.'
+    ],
+    philosophy: 'Technology creates leverage. People create impact.',
+    stats: [
+      { label: 'Global Availability', value: '100%' },
+      { label: 'CX & AI Focus', value: '100%' },
+      { label: 'Human Leadership', value: '100%' },
+      { label: 'Practical Solutions', value: '100%' },
+    ],
   },
-  organizations: {
-    heading: 'For Organizations',
-    subheading: 'Turn operational challenges into practical improvement opportunities.',
-    services: [
+  work: {
+    title: 'What I Do',
+    subtitle: 'Services for organizations, professionals, leaders and teams.',
+    items: [
       {
-        title: 'CX Transformation',
-        description: 'Improve customer journeys, service operations, customer-centric processes and experience design.',
-        icon: 'Users'
+        title: 'CX Consulting',
+        category: 'For Organizations',
+        description: 'Improve customer journeys, service operations and customer experience.',
+        tags: ['Customer Journeys', 'Service Operations'],
+        link: '#',
+        icon: 'Users',
       },
       {
-        title: 'AI Adoption & Workplace Transformation',
-        description: 'Identify practical opportunities for AI across workflows, productivity, knowledge management and customer operations.',
-        icon: 'Cpu'
+        title: 'AI Transformation',
+        category: 'For Organizations',
+        description: 'Identify practical AI opportunities across productivity, workflows and customer operations.',
+        tags: ['Productivity', 'Workflows'],
+        link: '#',
+        icon: 'Cpu',
       },
       {
         title: 'Operations & Process Improvement',
-        description: 'Analyze workflows, identify bottlenecks and improve operational execution.',
-        icon: 'Settings'
+        category: 'For Organizations',
+        description: 'Optimize processes, workflows and operational performance.',
+        tags: ['Workflows', 'Performance'],
+        link: '#',
+        icon: 'Settings',
       },
       {
-        title: 'Data & Performance Intelligence',
-        description: 'Turn operational data into useful dashboards, reporting and management insights.',
-        icon: 'BarChart'
-      },
-      {
-        title: 'Leadership & Change',
-        description: 'Help leaders and teams navigate performance, accountability, communication and AI-driven change.',
-        icon: 'Compass'
-      }
-    ],
-    cta: { text: 'Discuss a Business Challenge', href: '/#contact' }
-  },
-  professionals: {
-    heading: 'For Professionals',
-    subheading: 'Build the skills, positioning and confidence needed for an AI-driven workplace.',
-    services: [
-      {
-        title: 'AI Workplace Skills',
-        description: 'Learn how to use AI practically in everyday professional work.',
-        icon: 'Cpu'
-      },
-      {
-        title: 'Career Strategy',
-        description: 'Clarify career direction, positioning and job strategy.',
-        icon: 'Compass'
-      },
-      {
-        title: 'Interview Preparation',
-        description: 'Prepare for behavioral, leadership and scenario-based interviews using structured frameworks such as STAR.',
-        icon: 'Mic'
-      },
-      {
-        title: 'Professional Positioning',
-        description: 'Improve LinkedIn, resume positioning and professional storytelling.',
-        icon: 'UserCheck'
-      }
-    ],
-    cta: { text: 'Explore Professional Support', href: '/#contact' }
-  },
-  expertise: {
-    heading: 'Where I Bring Expertise',
-    categories: [
-      {
-        title: 'Customer Experience',
-        items: ['Customer journeys', 'Service operations', 'Customer-centric transformation']
-      },
-      {
-        title: 'Artificial Intelligence',
-        items: ['Generative AI', 'Prompt engineering', 'AI workplace adoption', 'AI-assisted workflows']
-      },
-      {
-        title: 'Business Operations',
-        items: ['Process improvement', 'Performance management', 'Workflow optimization', 'WFM']
+        title: 'Leadership Advisory',
+        category: 'For Organizations',
+        description: 'Help leaders build stronger teams, communication, accountability and change capabilities.',
+        tags: ['Team Building', 'Accountability'],
+        link: '#',
+        icon: 'Award',
       },
       {
         title: 'Data & Analytics',
-        items: ['MIS reporting', 'Dashboards', 'Performance analysis', 'Business insights']
+        category: 'For Organizations',
+        description: 'Turn operational data into clearer insights and better decisions.',
+        tags: ['Insights', 'Decisions'],
+        link: '#',
+        icon: 'BarChart',
       },
       {
-        title: 'Leadership',
-        items: ['People leadership', 'Change management', 'Stakeholder management', 'Team development']
+        title: 'Career Strategy',
+        category: 'For Professionals & Candidates',
+        description: 'Build a clearer direction for your next career move.',
+        tags: ['Career Move', 'Direction'],
+        link: '#',
+        icon: 'Compass',
       },
       {
-        title: 'Project Leadership',
-        items: ['Problem solving', 'Cross-functional execution', 'Transformation initiatives', 'Continuous improvement']
+        title: 'Interview Preparation',
+        category: 'For Professionals & Candidates',
+        description: 'Prepare for leadership, behavioral and scenario-based interviews.',
+        tags: ['Behavioral', 'Scenario-based'],
+        link: '#',
+        icon: 'Mic',
+      },
+      {
+        title: 'Professional Positioning',
+        category: 'For Professionals & Candidates',
+        description: 'Strengthen your LinkedIn, resume, personal brand and professional story.',
+        tags: ['LinkedIn', 'Resume'],
+        link: '#',
+        icon: 'UserCheck',
+      },
+      {
+        title: 'AI Career Readiness',
+        category: 'For Professionals & Candidates',
+        description: 'Understand how AI is changing your role and the skills you need for the future.',
+        tags: ['AI Skills', 'Future of Work'],
+        link: '#',
+        icon: 'Cpu',
+      },
+      {
+        title: 'Leadership in an AI-Driven Workplace',
+        category: 'For Leaders & Teams',
+        description: 'Modern leadership requires both human judgment and technology awareness. I help leaders and teams navigate AI adoption, change, communication, accountability, customer-centric leadership and operational challenges.',
+        tags: ['Change', 'Communication'],
+        link: '#',
+        icon: 'Users',
       }
-    ]
-  },
-  howIWork: {
-    heading: 'Start With the Problem. Build the Right Solution.',
-    stages: [
-      { number: '01', title: 'Discover', description: 'Understand the challenge, context, stakeholders and current state.' },
-      { number: '02', title: 'Diagnose', description: 'Analyze root causes, workflows, data and opportunities.' },
-      { number: '03', title: 'Design', description: 'Create a practical strategy or solution.' },
-      { number: '04', title: 'Implement', description: 'Translate the strategy into action with the right people, processes and technology.' },
-      { number: '05', title: 'Improve', description: 'Measure, learn and refine.' }
-    ]
-  },
-  selectedWork: {
-    heading: 'Selected Work & Experience',
-    projects: [
-      {
-        challenge: 'Improve service operations and reduce resolution times.',
-        approach: 'Analyzed existing workflows, implemented AI-assisted support tools and trained staff.',
-        role: 'CX & AI Consultant',
-        outcome: 'Reduced resolution times and improved customer satisfaction scores.',
-        client: 'Confidential Client'
-      },
-      {
-        challenge: 'Transition to an AI-driven operational model without disrupting ongoing work.',
-        approach: 'Created a phased implementation strategy focusing on high-impact areas first.',
-        role: 'Project Leader',
-        outcome: 'Successful adoption of new tools with positive employee feedback.',
-        client: 'Confidential Client'
-      }
-    ]
-  },
-  aiCx: {
-    heading: 'AI Should Improve the Experience — Not Replace the Human',
-    copy: 'The strongest AI implementations are not simply about automation. They improve the way employees work, the way customers are served and the way leaders make decisions.',
-    formula: 'People + Process + Data + AI → Better Productivity + Better Decisions + Better Customer Experience',
-    applications: [
-      'AI-assisted customer support',
-      'Workflow automation',
-      'Reporting assistance',
-      'Knowledge management',
-      'Customer insights',
-      'Employee productivity',
-      'Process documentation',
-      'AI-enabled decision support'
-    ]
-  },
-  leadership: {
-    heading: 'Leadership Still Matters in an AI Workplace',
-    copy: 'AI can increase capability. Leadership determines how that capability is used.',
-    principles: [
-      { title: 'Trust', description: 'People perform differently when they know they are trusted.' },
-      { title: 'Accountability', description: 'Technology does not remove the need for ownership.' },
-      { title: 'Adaptability', description: 'Leaders must learn as quickly as the workplace changes.' },
-      { title: 'Human Judgment', description: 'AI can provide answers. Leaders still need context, judgment and responsibility.' }
     ],
-    cta: { text: 'Read Leadership Insights', href: '/#insights' }
   },
-  recognition: {
-    heading: 'Recognition & Credentials',
+  process: {
+    title: 'My Approach',
+    subtitle: 'I focus on practical solutions built around the real challenge, not one-size-fits-all advice.',
+    steps: [
+      { number: '01', title: 'Discover', description: 'Understand the real challenge and context.' },
+      { number: '02', title: 'Diagnose', description: 'Analyze root causes and identify opportunities.' },
+      { number: '03', title: 'Design', description: 'Create practical strategies and solutions.' },
+      { number: '04', title: 'Implement', description: 'Put solutions into action effectively.' },
+      { number: '05', title: 'Improve', description: 'Measure results and refine for sustained impact.' },
+    ],
+  },
+  expertise: {
+    title: 'Why Work With Me',
+    subtitle: 'From improving customer experience to adopting AI or preparing for the next career opportunity, I help people and organizations move forward.',
+    skills: [
+      { name: 'Real-World Experience', level: 100, category: 'Practical experience across CX, operations and leadership.' },
+      { name: 'Business + People', level: 100, category: 'I consider both business outcomes and the people responsible for delivering them.' },
+      { name: 'Practical AI', level: 100, category: 'AI focused on real workplace problems and opportunities.' },
+      { name: 'Human-Centered Leadership', level: 100, category: 'Technology creates leverage. People create impact.' },
+      { name: 'Companies & Startups', level: 100, category: 'Who I Work With' },
+      { name: 'Leaders & Teams', level: 100, category: 'Who I Work With' },
+      { name: 'Professionals & Candidates', level: 100, category: 'Who I Work With' },
+    ],
+    badges: [],
+    certifications: [],
+  },
+  contact: {
+    title: 'Global Consulting',
+    subtitle: 'Working With Organizations & Professionals Worldwide. Based in India and available globally through remote consulting, advisory, workshops and project-based engagements. Let\'s build what\'s next - start with the challenge.',
+    cta: 'Start a Conversation',
+  },
+  books: {
+    title: 'Insights',
     items: [
-      'Thought Leadership',
-      'AI',
-      'Customer Experience',
-      'Leadership',
-      'Project Management',
-      'Other Verified Credentials'
-    ]
-  },
-  author: {
-    heading: 'Author',
-    title: 'The Bridge You Become: Becoming the Leader Others Remember',
-    copy: 'A leadership book built around trust, growth, people and the experiences that shape us as leaders.',
-    cta: { text: 'Explore the Book', href: '#' },
-    image: '/book-cover.png'
-  },
-  insights: {
-    heading: 'Ideas on CX, AI & Leadership',
-    categories: ['AI at Work', 'Customer Experience', 'Leadership', 'Operations', 'Future of Work', 'Career Growth'],
-    articles: [
       {
-        title: 'Building a Customer-Centric Culture',
-        category: 'Customer Experience',
-        date: '2026',
-        description: 'How to align your teams around the customer experience.',
-        link: 'https://linkedin.com/in/abhishek-shukla-cx'
-      },
-      {
-        title: 'AI in the Workplace: Practical Steps',
-        category: 'AI at Work',
-        date: '2026',
-        description: 'A guide to adopting AI tools without losing the human touch.',
-        link: 'https://linkedin.com/in/abhishek-shukla-cx'
+        title: 'CX. AI. Leadership. Future of Work.',
+        description: 'Practical ideas, experiences and frameworks from my work and learning.',
+        link: 'https://linkedin.com/in/abhishek-shukla-cx', // Defaulting to LinkedIn
+        image: '/book-cover.png', // Keep a placeholder
       }
-    ],
-    cta: { text: 'Read My Insights', href: '/#insights' }
-  },
-  whyAbhishek: {
-    heading: 'Practical Thinking. Human Leadership. Technology With Purpose.',
-    statements: [
-      { title: 'Real-World Perspective', description: 'Experience grounded in CX, operations, leadership and workplace challenges.' },
-      { title: 'Business + People', description: 'Business performance and employee experience are connected.' },
-      { title: 'Practical AI', description: 'Focus on useful workplace applications rather than AI hype.' },
-      { title: 'Structured Execution', description: 'Turn ideas into practical plans, implementation and continuous improvement.' }
     ]
   },
-  workWithAbhishek: {
-    heading: 'Have a Problem Worth Solving?',
-    copy: 'Tell me what you are trying to improve. We can start with the challenge and determine whether CX, AI, operations, data, leadership or a combination of them is the right answer.',
-    organizations: {
-      title: 'Organizations',
-      tags: 'CX / AI / Operations / Transformation',
-      cta: { text: 'Discuss a Business Challenge', href: '/#contact' }
-    },
-    professionals: {
-      title: 'Professionals',
-      tags: 'Career / AI Skills / Interview / Professional Positioning',
-      cta: { text: 'Explore Professional Support', href: '/#contact' }
-    }
-  },
-  consultingRates: {
-    consulting: '$40/hour',
-    bookingLink: 'https://topmate.io/abhishek_shukla1610'
-  },
-  contactSection: {
-    heading: "Let's Start With the Challenge",
-    options: [
-      'Organization',
-      'Professional',
-      'Collaboration / Brand',
-      'Speaking / Podcast',
-      'Consulting',
-      'Other'
-    ]
-  },
-  about: {
-    heading: 'About Abhishek Shukla',
-    roles: [
-      'CX & AI Leader',
-      'Project Leader',
-      'Consultant',
-      'Author'
-    ],
-    focus: [
-      'Customer Experience',
-      'Operations',
-      'Artificial Intelligence',
-      'Data & Analytics',
-      'Leadership',
-      'Workplace Transformation'
-    ],
-    copy: 'I work at the intersection of Customer Experience, Artificial Intelligence, Business Operations, and Leadership. With a focus on identifying real problems and determining where CX, AI, data, process improvement, or leadership can create practical value, I help organizations turn operational challenges into practical improvement opportunities.',
-    resumeUrl: '/Abhishek_Shukla_Resume.pdf'
-  }
+  navLinks: [
+    { label: 'About', href: '#about' },
+    { label: 'Services', href: '#work' },
+    { label: 'Approach', href: '#process' },
+    { label: 'Why Me', href: '#expertise' },
+    { label: 'Insights', href: '#books' },
+    { label: 'Contact', href: '#contact' },
+  ],
 } as const;
